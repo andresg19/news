@@ -1,3 +1,1 @@
-import {
-
-} from "../actions/actionTypes";
+export const GET_NEWS = "GET_NEWS";
