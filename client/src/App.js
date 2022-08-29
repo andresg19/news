@@ -7,7 +7,7 @@ import News from './Components/News/News';
 function App() {
   let element = useRoutes([
     {path: "/", element: <Home />},
-    {path: "/news", element: <News/>}
+    {path: "/News", element: <News/>}
   ]);
   return element
 }

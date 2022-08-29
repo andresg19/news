@@ -18,7 +18,7 @@ const NewsBox = () => {
             myNews.map((n) => {
                 return(
                     <div key={n._id} className="containerNewsBox">
-                        <title>{n.titleNew}</title>
+                        <h2>{n.titleNew}</h2>
                         <p>{n.descriptionNew}</p>
                         <img src={n.imageNew} alt="img not found" width='25%' />
                         <h5>{n.dateNew}</h5>
