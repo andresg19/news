@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../Redux/actions";
 import News from "./News";
+import './NewsBox.modules.css'
 
 const NewsBox = () => {
     const dispatch = useDispatch()
