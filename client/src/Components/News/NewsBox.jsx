@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../Redux/actions";
+import News from "./News";
 
-const News = () => {
+const NewsBox = () => {
     const dispatch = useDispatch()
     const myNews = useSelector((state) => state.news);
     console.log('soy la noticia', myNews)
@@ -16,10 +17,9 @@ const News = () => {
         {
             myNews.map((n) => {
                 return(
-                    <div key={n._id} className="containerNews">
+                    <div key={n._id} className="containerNewsBox">
                         <title>{n.titleNew}</title>
                         <p>{n.descriptionNew}</p>
-                        <p>{n.textNew}</p>
                         <img src={n.imageNew} alt="img not found" width='25%' />
                         <h5>{n.dateNew}</h5>
                     </div>
@@ -30,4 +30,4 @@ const News = () => {
    )
 }
  
-export default News;
+export default NewsBox;
