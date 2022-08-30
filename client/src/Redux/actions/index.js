@@ -1,6 +1,8 @@
 import {
 GET_NEWS,
-GET_NEWS_BY_ID
+GET_NEWS_BY_ID,
+CLEAR_STATE,
+GET_CURIOUS,
 } from "../actions/actionTypes";
 
 import axios from 'axios';
@@ -33,3 +35,24 @@ export const getNewsById = (id) => {
         }
     }
 }
+
+export const getCuriosities = () => {
+    return async function(dispatch) {
+        try {
+            let result = await axios.get('http://localhost:3001/curiosities');
+            return dispatch({
+                type: GET_CURIOUS,
+                payload: result.data.docs
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const clearState = () => {
+    console.log("clearState");
+    return {
+      type: CLEAR_STATE,
+    };
+  };

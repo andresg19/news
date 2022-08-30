@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getNewsById } from "../../Redux/actions/index";
+import { clearState, getNewsById } from "../../Redux/actions/index";
 // import News from '../News/News';
 
 const DetailNews = () => {
@@ -13,7 +13,10 @@ const DetailNews = () => {
 
     useEffect(() => {
         dispatch(getNewsById(id))
-    }, [])
+        return () => {
+            dispatch(clearState()); 
+          };
+        }, [dispatch, id]);
 
     return ( 
         <div className='detailnewsContainer'>

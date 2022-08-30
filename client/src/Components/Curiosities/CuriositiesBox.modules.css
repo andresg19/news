@@ -1,0 +1,7 @@
+.containerCuriousBox {
+    display: block;
+    margin-left: 0.5%;
+    width: 99%;
+    background-color: rgba(241, 235, 235, 0.253);
+    box-shadow: 2px 2px 2px 0px rgba(14, 13, 13, 0.795);
+}

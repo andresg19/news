@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../Redux/actions";
+import ResponsiveAppBar from "../NavBar/Nav";
 
 const News = () => {
     const dispatch = useDispatch()
@@ -13,6 +14,7 @@ const News = () => {
 
    return(
     <div>
+        <ResponsiveAppBar />
         {
             myNews.map((n) => {
                 return(

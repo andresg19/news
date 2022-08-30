@@ -18,16 +18,34 @@
 .tool{
     background-color: black;
 }
+.sectionNewsAndCurious {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
 
-.section {
-    display: block;
+ .sectionNews {
+    display: flex;
     display: inline-table;
     margin-left: 1%;
     margin-top: 10%;
     width: 30%;
-    height: 50%;
+    /* height: 50%; */
     background-color: rgba(137, 140, 151, 0.404);
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.952);
     
 }
+
+ .sectionCurious {
+    display: flex;
+    display: inline-table;
+    margin-right: 1%;
+    margin-top: 10%;
+    width: 30%;
+    background-color: rgba(137, 140, 151, 0.404);
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.952);
+    
+}
+
 
