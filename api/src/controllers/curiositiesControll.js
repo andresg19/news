@@ -1,9 +1,10 @@
 const { default: mongoose } = require("mongoose");
-const { where } = require("../models/news");
-const model = require("../models/news");
+const { where } = require("../models/curiosities");
+const model = require("../models/curiosities");
 
 
-exports.getNews= (req, res) => {
+
+exports.getCurious= (req, res) => {
   model.find({}, (err, docs) => {
     res.status(200).send({
       docs,
@@ -11,7 +12,7 @@ exports.getNews= (req, res) => {
   });
 };
 
-exports.getNewsId = (req, res) => {
+exports.getCuriousId = (req, res) => {
   const { id } = req.params;
   model.findById(
     {
@@ -25,7 +26,7 @@ exports.getNewsId = (req, res) => {
 
 
 
-exports.postNews = (req, res) => {
+exports.postCurious = (req, res) => {
   const data = req.body;
 
   model.create(data, (err, docs) => {
@@ -41,7 +42,7 @@ const parseId = (id) => {
   return mongoose.Types.ObjectId(id);
 };
 
-exports.putNews = (req, res) => {
+exports.putCurious = (req, res) => {
   const { id } = req.params;
   const body = req.body;
   console.log(body);
@@ -54,7 +55,7 @@ exports.putNews = (req, res) => {
 
 
 
-exports.deleteNews = (req, res) => {
+exports.deleteCurious = (req, res) => {
   const { id } = req.params;
   model.deleteOne({ _id: parseId(req.params.id) }, (err, docs) => {
     res.send({

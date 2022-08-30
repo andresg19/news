@@ -1,36 +1,35 @@
 const express = require('express')
 
-const controller = require('../controllers/newsControll')
+const controller = require('../controllers/curiositiesControll')
 
 const router = express.Router()
 
-const path = 'news'
+const path = 'curiosities'
 
 router.get(
     `/${path}`,
-    controller.getNews
+    controller.getCurious
 )
 
 
 router.get(
     `/${path}/:id`,
-    controller.getNewsId
+    controller.getCuriousId
 )
-
 
 router.post(
     `/${path}/insert`,
-    controller.postNews
+    controller.postCurious
 )
 
 router.put(
     `/${path}/:id`,
-    controller.putNews
+    controller.putCurious
 )
 
 router.delete(
     `/${path}/:id`,
-    controller.deleteNews
+    controller.deleteCurious
 )
 
 

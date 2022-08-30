@@ -6,6 +6,7 @@ const app = express()
 const port = 3001
 
 const newsRouter = require('./src/routes/newsRoutes')
+const curiositiesRouter = require('./src/routes/curiositiesRoutes')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
@@ -32,6 +33,7 @@ app.use(logger('dev'));
 app.use(cookieParser())
 
 app.use(newsRouter)
+app.use(curiositiesRouter)
 
 
 
