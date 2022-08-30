@@ -2,7 +2,8 @@ import {
     GET_NEWS,
     GET_NEWS_BY_ID,
     CLEAR_STATE,
-    GET_CURIOUS
+    GET_CURIOUS,
+    GET_CURIOUS_BY_ID,
  } from "../actions/actionTypes";
 
 
@@ -10,6 +11,7 @@ const initialState = {
     news : [],
     detail: [],
     curiosities: [],
+    detailCurious: [],
  }
 
 
@@ -34,6 +36,12 @@ export default function rootReducer(state = initialState, { type, payload }) {
       return {
         ...state,
         curiosities: payload,
+      }
+    case GET_CURIOUS_BY_ID:
+      return {
+        ...state,
+        detailCurious: payload,
+
       }
 
     default:

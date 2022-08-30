@@ -20,7 +20,7 @@ const CuriositiesBox = () => {
             myCurious.map((c) => {
                 return(
                     <div key={c._id} className="containerCuriousBox">
-                        <Link to={'/CuriositiesDetail/' + c._id}>
+                        <Link to={'/DetailCuriosities/' + c._id}>
                         <h2>{c.title}</h2>
                         <img src={c.image} alt="img not found" width='25%' />
                         </Link>

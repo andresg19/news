@@ -3,6 +3,7 @@ GET_NEWS,
 GET_NEWS_BY_ID,
 CLEAR_STATE,
 GET_CURIOUS,
+GET_CURIOUS_BY_ID
 } from "../actions/actionTypes";
 
 import axios from 'axios';
@@ -25,7 +26,6 @@ export const getNewsById = (id) => {
     return async function(dispatch) {
         try {
             let result = await axios.get(`http://localhost:3001/news/${id}`);
-            console.log('Aca estoy', result)
             return dispatch({
                 type: GET_NEWS_BY_ID,
                 payload: result.data
@@ -43,6 +43,21 @@ export const getCuriosities = () => {
             return dispatch({
                 type: GET_CURIOUS,
                 payload: result.data.docs
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const getCuriositiesById = (id) => {
+    return async function(dispatch) {
+        try {
+            let result = await axios.get(`http://localhost:3001/curiosities/${id}`);
+            console.log(result)
+            return dispatch({
+                type: GET_CURIOUS_BY_ID,
+                payload: result.data
             })
         } catch (error) {
             console.log(error)
