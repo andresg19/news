@@ -7,6 +7,7 @@ const port = 3001
 
 const newsRouter = require('./src/routes/newsRoutes')
 const curiositiesRouter = require('./src/routes/curiositiesRoutes')
+const usersRouter = require('./src/routes/usersRoutes')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
@@ -34,6 +35,7 @@ app.use(cookieParser())
 
 app.use(newsRouter)
 app.use(curiositiesRouter)
+app.use(usersRouter)
 
 
 
