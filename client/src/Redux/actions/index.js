@@ -3,7 +3,9 @@ GET_NEWS,
 GET_NEWS_BY_ID,
 CLEAR_STATE,
 GET_CURIOUS,
-GET_CURIOUS_BY_ID
+GET_CURIOUS_BY_ID,
+REGISTER_USER,
+LOGIN_USER,
 } from "../actions/actionTypes";
 
 import axios from 'axios';
@@ -63,6 +65,18 @@ export const getCuriositiesById = (id) => {
             console.log(error)
         }
     }
+}
+
+export const registerUser = (user) => {
+    axios.post('http://localhost:3001/users/insert', {
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        password: user.password,
+        address: user.address,
+    })
+    .then((res) => console.log(res.data))
+    .catch((e) => console.log(e));
 }
 
 export const clearState = () => {
