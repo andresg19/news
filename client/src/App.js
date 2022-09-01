@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, useRoutes, } from "react-router-dom";
+import Register from './Components/Authentication/Register';
 import Curiosities from './Components/Curiosities/Curiosities';
 import DetailCuriosities from './Components/DetailCuriosities/DetailCurious';
 import DetailNews from './Components/DetailNews/DetailNews';
@@ -13,7 +14,8 @@ function App() {
     {path: "/News", element: <News />},
     {path: "/DetailNews/:id", element: <DetailNews />},
     {path: "/Curiosities", element: <Curiosities />},
-    {path: "/DetailCuriosities/:id", element: <DetailCuriosities />}
+    {path: "/DetailCuriosities/:id", element: <DetailCuriosities />},
+    {path: "/Register", element: <Register />}
   ]);
   return element
 }

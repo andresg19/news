@@ -67,16 +67,13 @@ export const getCuriositiesById = (id) => {
     }
 }
 
-export const registerUser = (user) => {
-    axios.post('http://localhost:3001/users/insert', {
-        name: user.name,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-        address: user.address,
-    })
-    .then((res) => console.log(res.data))
-    .catch((e) => console.log(e));
+export const registerUser = (payload) => {
+    return async function() {
+        let data = axios.post('http://localhost:3001/users/insert', payload);
+        return { 
+            data
+        };
+    }
 }
 
 export const clearState = () => {
