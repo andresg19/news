@@ -1,21 +1,80 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import {  findUserLog, getUsers } from '../../Redux/actions';
+import swal from "sweetalert";
+
 
 const Login = () => {
+    const users = useSelector((state) => state.users)
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [input, setInput] = useState({
         email: "",
         password: "",
     })
+    console.log(input)
+    console.log(users)
+
+
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [])
 
     const handleChange = (e) => {
         setInput({...input, [e.target.name] : e.target.value});
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let data = input
+        users.forEach((u) => {
+           if(u.email === data.email && u.password === data.password) {
+            navigate('/')
+           } else {
+            swal({
+            
+                text: 'Check the entered data',
+                type: 'Error',
+                buttons: {
+                  confirm: {
+                    text: 'Confirmar',
+                    value: 'confirm',
+                  },
+                },
+              })
+           }
+        })
+    
+
+        // if (input.email === user.email && input.password == user.password) {
+        //     navigate('/')
+        // } else if(input.email !== user.email || input.password !== user.password) {
+        //     swal({
+            
+        //         text: 'Check the entered data',
+        //         type: 'Error',
+        //         buttons: {
+        //           confirm: {
+        //             text: 'Confirmar',
+        //             value: 'confirm',
+        //           },
+        //         },
+        //       })
+        // }
+
+        
+        
+        // console.log('soy login', loginUser(input))
+    }
+
     return ( 
         <div>
             <h1>Login</h1>
-            <form>
-                <input type="text" name='email' placeholder='Email' />
-                <input type="password" name='password' placeholder='Password' />
+            <form onSubmit={handleSubmit}>
+                <input type="text" name='email' placeholder='Email' onChange={handleChange} />
+                <input type="password" name='password' placeholder='Password' onChange={handleChange} />
+                <button type='submit'>Enter the site</button>
             </form>
         </div>
      );

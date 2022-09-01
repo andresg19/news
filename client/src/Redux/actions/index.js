@@ -4,8 +4,8 @@ GET_NEWS_BY_ID,
 CLEAR_STATE,
 GET_CURIOUS,
 GET_CURIOUS_BY_ID,
-REGISTER_USER,
 LOGIN_USER,
+GET_USERS
 } from "../actions/actionTypes";
 
 import axios from 'axios';
@@ -75,6 +75,35 @@ export const registerUser = (payload) => {
         };
     }
 }
+
+export const findUserLog = (payload) => {
+    return async function(dispatch) {
+        try {
+            let result = await axios.post('http://localhost:3001/users/log', payload);
+            console.log('result', result.data.docs)
+            return dispatch({
+                type: LOGIN_USER,
+                payload: result.data.docs
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const getUsers = () => {
+    return async function(dispatch) {
+        try {
+            let result = await axios.get('http://localhost:3001/users');
+            return dispatch({
+                type: GET_USERS,
+                payload: result.data.docs
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    };
+};
 
 export const clearState = () => {
     console.log("clearState");

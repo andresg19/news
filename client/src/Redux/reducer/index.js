@@ -4,6 +4,8 @@ import {
     CLEAR_STATE,
     GET_CURIOUS,
     GET_CURIOUS_BY_ID,
+    LOGIN_USER,
+    GET_USERS,
  } from "../actions/actionTypes";
 
 
@@ -12,6 +14,7 @@ const initialState = {
     detail: [],
     curiosities: [],
     detailCurious: [],
+    users: []
  }
 
 
@@ -22,6 +25,26 @@ export default function rootReducer(state = initialState, { type, payload }) {
         ...state,
         news: payload,
       };
+    // case LOGIN_USER:
+    //   const usersDb = state.users;
+      
+    //   console.log('usersDB',usersDb)
+
+    //   usersDb.filter((u) => {
+    //     if (u.email === payload.email && u.password === payload.password) {
+    //       return alert('usuario correcto')
+    //     } else {
+    //       alert('usuario incorrecto')
+    //     }
+    //   })
+    //   return {
+    //     ...state,
+    //   }
+    case GET_USERS:
+      return {
+        ...state,
+        users: payload,
+      }
     case GET_NEWS_BY_ID:
       return {
         ...state,
