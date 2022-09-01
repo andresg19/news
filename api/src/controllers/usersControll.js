@@ -17,16 +17,23 @@ exports.postUsers = (req, res) => {
     });
   };
 
-exports.postLog = (req, res) => {
-    const user = model.findOne({
-        email: req.body.email,
-        password: req.body.password,
-    })
-
-    if (user) {
-        return res.json({status: 'ok', user: true})
-    } else {
-        return res.json({status: 'error', user: false})
+exports.log = (req, res) => {
+     model.findOne({
+      email: req.body.email,
+      password: req.body.password,
+     },
+     (err, docs) => {
+      res.status(200).send({
+        docs,
+      });
     }
-
+    )
 }
+
+exports.getUsers= (req, res) => {
+  model.find({}, (err, docs) => {
+    res.status(200).send({
+      docs,
+    });
+  });
+};

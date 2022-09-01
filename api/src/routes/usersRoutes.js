@@ -13,7 +13,12 @@ router.post(
 
 router.post(
     `/${path}/log`,
-    controller.postLog
+    controller.log
+)
+
+router.get(
+    `/${path}`,
+    controller.getUsers
 )
 
 module.exports = router
