@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const Login = () => {
     const [input, setInput] = useState({
-        email: null,
-        password: null,
+        email: "",
+        password: "",
     })
 
     const handleChange = (e) => {

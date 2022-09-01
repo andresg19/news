@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, useRoutes, } from "react-router-dom";
+import Login from './Components/Authentication/Login';
 import Register from './Components/Authentication/Register';
 import Curiosities from './Components/Curiosities/Curiosities';
 import DetailCuriosities from './Components/DetailCuriosities/DetailCurious';
@@ -15,7 +16,8 @@ function App() {
     {path: "/DetailNews/:id", element: <DetailNews />},
     {path: "/Curiosities", element: <Curiosities />},
     {path: "/DetailCuriosities/:id", element: <DetailCuriosities />},
-    {path: "/Register", element: <Register />}
+    {path: "/Register", element: <Register />},
+    {path: "/Login", element: <Login />}
   ]);
   return element
 }

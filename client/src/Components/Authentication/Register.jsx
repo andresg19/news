@@ -1,44 +1,44 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../Redux/actions';
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 
+//Validacion de campos
+export function validate(input) {
+let errors = {};
+
+if (!input.name) {
+ errors.name = "Name is required";
+} else if (!/^[A-Z][a-z]{3,20}$/.test(input.name)) {
+ errors.name = "First capital letter, no numbers";
+}
+if (!input.lastName) {
+ errors.lastName = "Lastname is required";
+} else if (!/^[A-Z][a-z]{3,20}$/.test(input.lastName)) {
+ errors.lastName = "First capital letter, no numbers";
+}
+if(!input.email) {
+errors.email = "Email is required";
+} else if (!/\S+@\S+\.\S+/.test(input.email)) {
+errors.email = "Invalid email";
+}
+if(!input.password) {
+errors.pasword = "Password is required";
+} else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(input.password)) {
+errors.email =  "Password is required";
+}
+if(!input.address) {
+errors.address = "Address is required";
+} else if(!/^[A-Za-z]+ [0-9]+$/.test(input.address)) {
+errors.address = "Name and street number"
+}
+return errors;
+}
 
 const Register = () => {
-
-    //Validacion de campos
- function validate(input) {
-   let errors = {};
-
-   if (!input.name) {
-     errors.name = "Name is required";
-   } else if (!/^[A-Z][a-z]{3,20}$/.test(input.name)) {
-     errors.name = "First capital letter, no numbers";
-   }
-   if (!input.lastName) {
-     errors.lastName = "Lastname is required";
-   } else if (!/^[A-Z][a-z]{3,20}$/.test(input.lastName)) {
-     errors.lastName = "First capital letter, no numbers";
-   }
-   if(!input.email) {
-    errors.email = "Email is required";
-   } else if (!/\S+@\S+\.\S+/.test(input.email)) {
-    errors.email = "Invalid email";
-   }
-   if(!input.password) {
-    errors.pasword = "Password is required";
-   } else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(input.password)) {
-    errors.email =  "Password is required";
-   }
-   if(!input.address) {
-    errors.address = "Address is required";
-   } else if(!/^[A-Za-z]+ [0-9]+$/.test(input.address)) {
-    errors.address = "Name and street number"
-   }
-   return errors;
- }
-
+    let navigate = useNavigate();
     const dispatch = useDispatch()
     const [input, setInput] = useState({
         name: "",
@@ -71,9 +71,9 @@ const Register = () => {
                 text: '¿Do you want to confirm the data??',
                 type: 'alert',
                 buttons: {
-                  cancel: 'Cancelar',
+                  cancel: 'Cancel',
                   confirm: {
-                    text: 'Agregar paciente',
+                    text: 'Sing-up',
                     value: 'confirm',
                   },
                 },
@@ -98,6 +98,7 @@ const Register = () => {
                       },
                     },
                   })
+                  navigate('/Login')
                 }
               })
               .catch((error) => {
