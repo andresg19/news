@@ -16,7 +16,9 @@ const initialState = {
     curiosities: [],
     detailCurious: [],
     users: [],
-    userLogged: [],
+    userLogged: JSON.parse(localStorage.getItem("actualUser"))
+    ? JSON.parse(localStorage.getItem("actualUser"))
+    : [],
  }
 
 
@@ -54,11 +56,10 @@ export default function rootReducer(state = initialState, { type, payload }) {
 
       }
     case USER_LOGGED:
-      console.log('PAYLOADLOGGED', payload)
-      console.log('USERLOGGED', state.userLogged)
+      console.log('payload', payload)
+      localStorage.setItem('actualUser', JSON.stringify(payload))
       return {
         ...state,
-        userLogged: payload
       }
 
     default:
