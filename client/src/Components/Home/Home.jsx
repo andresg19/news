@@ -11,9 +11,9 @@ const Home = () => {
   const actualUser = useSelector((state) => state.userLogged);
   console.log('soy el actual', actualUser)
 
-  // // useEffect(() => {
-  // //     dispatch(getNews());
-  // // }, [dispatch])
+  // useEffect(() => {
+  //     dispatch(getNews());
+  // }, [dispatch])
 
   return (
     <div className="container">

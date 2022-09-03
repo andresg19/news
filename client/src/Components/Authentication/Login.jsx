@@ -32,12 +32,23 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = input
+       
+        
+
         users.forEach((u) => {
-           if(u.email === data.email && u.password === data.password) {
-               dispatch(isLogged(u.email, body))
+            users.map((u) => {
+                if(
+                    u.email === data.email && u.password === data.password
+                ) {
+                    dispatch(isLogged(u.email, body))
+                }
+            })
+            if(u.email === data.email && u.password === data.password) {
+                actualUser.push(u);
+                dispatch(userLogged(actualUser));
                navigate('/');
-               actualUser.push(u)
-               dispatch(userLogged(actualUser));
+            //    actualUser.push(u)
+            //    dispatch(userLogged(actualUser));
 
            } else {
             swal({
