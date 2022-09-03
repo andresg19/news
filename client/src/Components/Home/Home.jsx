@@ -8,8 +8,8 @@ import CuriositiesBox from "../Curiosities/CuriositiesBox";
 
 const Home = () => {
   // const dispatch = useDispatch()
-  // // const myNews = useSelector((state) => state.news);
-  // console.log('soy la noticia', myNews)
+  const actualUser = useSelector((state) => state.userLogged);
+  console.log('soy el actual', actualUser)
 
   // // useEffect(() => {
   // //     dispatch(getNews());

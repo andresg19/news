@@ -67,13 +67,13 @@ const Register = () => {
 
         if(Object.keys(errorsValidations).length === 0) {
             swal({
-                title: 'Regístrese',
+                title: 'Sing-up',
                 text: '¿Do you want to confirm the data??',
                 type: 'alert',
                 buttons: {
                   cancel: 'Cancel',
                   confirm: {
-                    text: 'Sing-up',
+                    text: 'Confirm',
                     value: 'confirm',
                   },
                 },

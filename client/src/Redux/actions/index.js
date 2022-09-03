@@ -5,7 +5,9 @@ CLEAR_STATE,
 GET_CURIOUS,
 GET_CURIOUS_BY_ID,
 LOGIN_USER,
-GET_USERS
+GET_USERS,
+USER_LOGGED,
+IS_LOGGED,
 } from "../actions/actionTypes";
 
 import axios from 'axios';
@@ -104,6 +106,30 @@ export const getUsers = () => {
         }
     };
 };
+
+export const isLogged = (payload, body) => {
+    return async function (dispatch) {
+        console.log('entre')
+        try {
+            let result = await axios.put(`http://localhost:3001/users/${payload}`, body );
+            console.log('action', result)
+            return dispatch({
+                type: IS_LOGGED,
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const userLogged = (payload) => {
+    return async function (dispatch) {
+        return dispatch({
+            type: USER_LOGGED,
+            payload
+        })
+    }
+}
 
 export const clearState = () => {
     console.log("clearState");

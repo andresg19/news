@@ -120,6 +120,17 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+           
+              <Button
+                href= { `/}` }
+                // onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'red', display: 'block' }}
+              >
+                log out
+              </Button>
+   
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

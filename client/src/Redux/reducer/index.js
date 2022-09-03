@@ -6,6 +6,7 @@ import {
     GET_CURIOUS_BY_ID,
     LOGIN_USER,
     GET_USERS,
+    USER_LOGGED,
  } from "../actions/actionTypes";
 
 
@@ -14,7 +15,8 @@ const initialState = {
     detail: [],
     curiosities: [],
     detailCurious: [],
-    users: []
+    users: [],
+    userLogged: [],
  }
 
 
@@ -25,21 +27,6 @@ export default function rootReducer(state = initialState, { type, payload }) {
         ...state,
         news: payload,
       };
-    // case LOGIN_USER:
-    //   const usersDb = state.users;
-      
-    //   console.log('usersDB',usersDb)
-
-    //   usersDb.filter((u) => {
-    //     if (u.email === payload.email && u.password === payload.password) {
-    //       return alert('usuario correcto')
-    //     } else {
-    //       alert('usuario incorrecto')
-    //     }
-    //   })
-    //   return {
-    //     ...state,
-    //   }
     case GET_USERS:
       return {
         ...state,
@@ -65,6 +52,13 @@ export default function rootReducer(state = initialState, { type, payload }) {
         ...state,
         detailCurious: payload,
 
+      }
+    case USER_LOGGED:
+      console.log('PAYLOADLOGGED', payload)
+      console.log('USERLOGGED', state.userLogged)
+      return {
+        ...state,
+        userLogged: payload
       }
 
     default:

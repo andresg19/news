@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {  findUserLog, getUsers } from '../../Redux/actions';
+import { getUsers, isLogged, userLogged } from '../../Redux/actions';
 import swal from "sweetalert";
 
 
@@ -24,13 +24,19 @@ const Login = () => {
     const handleChange = (e) => {
         setInput({...input, [e.target.name] : e.target.value});
     }
-
+    
+    let body = {isLogged: true}
+    let actualUser = []
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = input
         users.forEach((u) => {
            if(u.email === data.email && u.password === data.password) {
-            navigate('/')
+               dispatch(isLogged(u.email, body))
+               navigate('/');
+               actualUser.push(u)
+               dispatch(userLogged(actualUser));
+
            } else {
             swal({
             
@@ -45,28 +51,10 @@ const Login = () => {
               })
            }
         })
+
     
-
-        // if (input.email === user.email && input.password == user.password) {
-        //     navigate('/')
-        // } else if(input.email !== user.email || input.password !== user.password) {
-        //     swal({
-            
-        //         text: 'Check the entered data',
-        //         type: 'Error',
-        //         buttons: {
-        //           confirm: {
-        //             text: 'Confirmar',
-        //             value: 'confirm',
-        //           },
-        //         },
-        //       })
-        // }
-
-        
-        
-        // console.log('soy login', loginUser(input))
     }
+
 
     return ( 
         <div>
