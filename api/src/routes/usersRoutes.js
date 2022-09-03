@@ -21,4 +21,9 @@ router.get(
     controller.getUsers
 )
 
+router.put(
+    `/${path}/:email`,
+    controller.putUserLogged
+)
+
 module.exports = router

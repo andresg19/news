@@ -22,6 +22,11 @@ const UsersSchema = new mongoose.Schema(
         type: String,
         required: true
       },
+      isLogged: {
+        type: Boolean,
+        default: 
+          false
+    }
     },
     {
         versionKey: false,

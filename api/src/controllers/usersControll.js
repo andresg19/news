@@ -17,6 +17,17 @@ exports.postUsers = (req, res) => {
     });
   };
 
+  exports.putUserLogged = (req, res) => {
+    const { email } = req.params;
+    const body = req.body;
+    console.log(body);
+    model.updateOne({ email: email }, body, (err, docs) => {
+      res.send({
+        items: docs,
+      });
+    });
+  };
+
 exports.log = (req, res) => {
      model.findOne({
       email: req.body.email,
