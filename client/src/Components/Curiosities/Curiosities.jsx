@@ -53,6 +53,46 @@ const Curiosities = () => {
             }
     }, [])
 
+    if(user.length === 0) {
+      return ( 
+        <div className='bloqueado'>
+        <div className='container curiosities'>
+            <ResponsiveAppBar />
+            <h1>Curiosities</h1>
+            {
+                curiosities.map((c) => {
+                    return(
+                        <div key={c._id} className='containerCurious'>
+                            <h2>{c.title}</h2>
+                            <p>{c.text}</p>
+                            <img src={c.image} alt="img not found" />
+                        </div>
+                    )
+                })
+            }
+        </div>
+        </div>
+     );
+    } else {
+      return ( 
+        <div>
+            <ResponsiveAppBar />
+            <h1>Curiosities</h1>
+            {
+                curiosities.map((c) => {
+                    return(
+                        <div key={c._id} className='containerCurious'>
+                            <h2>{c.title}</h2>
+                            <p>{c.text}</p>
+                            <img src={c.image} alt="img not found" />
+                        </div>
+                    )
+                })
+            }
+        </div>
+     );
+    }
+
     return ( 
         <div>
             <ResponsiveAppBar />

@@ -57,17 +57,32 @@ const DetailNews = () => {
           };
         }, [dispatch, id]);
 
-    return ( 
-        <div className='detailnewsContainer'>
-         
-                    <div className="containerNews">
-                        <h2>{actualNew.titleNew}</h2>
-                        <p>{actualNew.textNew}</p>
-                        <img src={actualNew.imageNew} alt="img not found" width='25%' />
-                        <h5>{actualNew.dateNew}</h5>
-                    </div>
-        </div>
-     );
+        if(user.length === 0) {
+          return ( 
+            <div className='bloqueado'>
+             
+                        <div className="containerNews">
+                            <h2>{actualNew.titleNew}</h2>
+                            <p>{actualNew.textNew}</p>
+                            <img src={actualNew.imageNew} alt="img not found" width='25%' />
+                            <h5>{actualNew.dateNew}</h5>
+                        </div>
+            </div> 
+            )
+        } else {
+          return ( 
+            <div className='detailnewsContainer'>
+             
+                        <div className="containerNews">
+                            <h2>{actualNew.titleNew}</h2>
+                            <p>{actualNew.textNew}</p>
+                            <img src={actualNew.imageNew} alt="img not found" width='25%' />
+                            <h5>{actualNew.dateNew}</h5>
+                        </div>
+            </div>
+          )
+        }
+    
 }
  
 export default DetailNews;

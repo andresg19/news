@@ -5,6 +5,7 @@ import ResponsiveAppBar from "../NavBar/Nav";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import './News.modules.css'
 
 const News = () => {
     const dispatch = useDispatch();
@@ -52,24 +53,45 @@ const News = () => {
               });
         }
     }, [dispatch])
-
-   return(
-    <div>
-        <ResponsiveAppBar />
-        {
-            myNews.map((n) => {
-                return(
-                    <div key={n._id} className="containerNews">
-                        <h2>{n.titleNew}</h2>
-                        <p>{n.textNew}</p>
-                        <img src={n.imageNew} alt="img not found" width='25%' />
-                        <h5>{n.dateNew}</h5>
-                    </div>
-                )
-            })
-        }
-    </div>
-   )
+   {
+    if (user.length === 0) {
+        return(
+            <div className="bloqueado">
+                <ResponsiveAppBar />
+                {
+                    myNews.map((n) => {
+                        return(
+                            <div key={n._id} className="containerNews">
+                                <h2>{n.titleNew}</h2>
+                                <p>{n.textNew}</p>
+                                <img src={n.imageNew} alt="img not found" width='25%' />
+                                <h5>{n.dateNew}</h5>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+           )
+    } else {
+        return(
+            <div>
+                <ResponsiveAppBar />
+                {
+                    myNews.map((n) => {
+                        return(
+                            <div key={n._id} className="containerNews">
+                                <h2>{n.titleNew}</h2>
+                                <p>{n.textNew}</p>
+                                <img src={n.imageNew} alt="img not found" width='25%' />
+                                <h5>{n.dateNew}</h5>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+           )
+    }
+   }
 }
  
 export default News;

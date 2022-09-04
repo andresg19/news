@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { clearState, getCuriositiesById } from "../../Redux/actions/index";
 // import News from '../News/News';
 import swal from "sweetalert";
+import './DetailCuriosities.modules.css'
 
 const DetailCuriosities = () => {
     const dispatch = useDispatch();
@@ -55,16 +56,28 @@ const DetailCuriosities = () => {
             dispatch(clearState()); 
           };
         }, [dispatch, id]);
-
-    return ( 
-        <div className='detailnewsContainer'>
-                    <div className="containerNews">
-                        <h2>{actualCurious.title}</h2>
-                        <p>{actualCurious.text}</p>
-                        <img src={actualCurious.image} alt="img not found" width='25%' />
-                    </div>
-        </div>
-     );
+    
+        if(user.length === 0) {
+          return ( 
+            <div className='bloqueado'>
+                        <div className="containerNews">
+                            <h2>{actualCurious.title}</h2>
+                            <p>{actualCurious.text}</p>
+                            <img src={actualCurious.image} alt="img not found" width='25%' />
+                        </div>
+            </div>
+         );
+        } else {
+          return ( 
+            <div className='detailnewsContainer'>
+                        <div className="containerNews">
+                            <h2>{actualCurious.title}</h2>
+                            <p>{actualCurious.text}</p>
+                            <img src={actualCurious.image} alt="img not found" width='25%' />
+                        </div>
+            </div>
+         );
+        }
 }
  
 export default DetailCuriosities;
