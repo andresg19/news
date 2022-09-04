@@ -9,6 +9,7 @@ import CuriositiesBox from "../Curiosities/CuriositiesBox";
 const Home = () => {
   // const dispatch = useDispatch()
   const actualUser = useSelector((state) => state.userLogged);
+
   console.log('soy el actual', actualUser)
 
   // useEffect(() => {

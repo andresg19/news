@@ -27,26 +27,18 @@ const Login = () => {
     
     let body = {isLogged: true}
     let actualUser = []
-
+ 
     
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = input
-       
-        
 
         users.forEach((u) => {
-            users.map((u) => {
-                if(
-                    u.email === data.email && u.password === data.password
-                ) {
-                    dispatch(isLogged(u.email, body))
-                }
-            })
-            if(u.email === data.email && u.password === data.password) {
-                actualUser.push(u);
-                dispatch(userLogged(actualUser));
-               navigate('/');
+
+                // })dispatch(isLogged(u.email, body))
+                if(u.email === data.email && u.password === data.password) {
+                    dispatch(userLogged(u));
+                    navigate('/');
             //    actualUser.push(u)
             //    dispatch(userLogged(actualUser));
 
