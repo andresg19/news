@@ -4,17 +4,25 @@ import NewsBox from "../News/NewsBox";
 import ResponsiveAppBar from "../NavBar/Nav";
 import "./Home.modules.css";
 import CuriositiesBox from "../Curiosities/CuriositiesBox";
+import { getUsers } from "../../Redux/actions";
 // import { getNews } from "../../Redux/actions";
 
 const Home = () => {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const actualUser = useSelector((state) => state.userLogged);
+  const [user, setUset] = useState(
+    JSON.parse(localStorage.getItem("actualUser"))
+    ? JSON.parse(localStorage.getItem("actualUser"))
+    : [],
+  )
+console.log('SOY EL LOCAL', user)
 
   console.log('soy el actual', actualUser)
 
-  // useEffect(() => {
-  //     dispatch(getNews());
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(getUsers())
+
+}, [])
 
   return (
     <div className="container">

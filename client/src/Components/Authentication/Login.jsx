@@ -26,7 +26,7 @@ const Login = () => {
     }
     
     let body = {isLogged: true}
-    let actualUser = []
+   
  
     
     const handleSubmit = (e) => {
@@ -37,6 +37,7 @@ const Login = () => {
 
                 // })dispatch(isLogged(u.email, body))
                 if(u.email === data.email && u.password === data.password) {
+                    // dispatch(isLogged(u.email, body));
                     dispatch(userLogged(u));
                     navigate('/');
             //    actualUser.push(u)
