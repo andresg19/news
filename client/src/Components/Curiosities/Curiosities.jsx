@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getCuriosities } from '../../Redux/actions';
 import ResponsiveAppBar from '../NavBar/Nav';
 import swal from "sweetalert";
@@ -64,7 +64,6 @@ const Curiosities = () => {
                     return(
                         <div key={c._id} className='containerCurious'>
                             <h2>{c.title}</h2>
-                            <p>{c.text}</p>
                             <img src={c.image} alt="img not found" />
                         </div>
                     )
@@ -83,8 +82,10 @@ const Curiosities = () => {
                     return(
                         <div key={c._id} className='containerCurious'>
                             <h2>{c.title}</h2>
-                            <p>{c.text}</p>
                             <img src={c.image} alt="img not found" />
+                            <Link to={'/DetailCuriosities/' + c._id}>
+                                complete curiosity
+                            </Link>
                         </div>
                     )
                 })

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../Redux/actions";
 import ResponsiveAppBar from "../NavBar/Nav";
 import swal from "sweetalert";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './News.modules.css'
 
@@ -17,6 +17,8 @@ const News = () => {
         : [],
       )
     console.log('soy la noticia', myNews)
+    
+    let myNewsReverse = myNews.reverse();
 
     function disableScroll() {
         // Get the current page scroll position
@@ -59,11 +61,10 @@ const News = () => {
             <div className="bloqueado">
                 <ResponsiveAppBar />
                 {
-                    myNews.map((n) => {
+                    myNewsReverse.map((n) => {
                         return(
                             <div key={n._id} className="containerNews">
                                 <h2>{n.titleNew}</h2>
-                                <p>{n.textNew}</p>
                                 <img src={n.imageNew} alt="img not found" width='25%' />
                                 <h5>{n.dateNew}</h5>
                             </div>
@@ -77,13 +78,15 @@ const News = () => {
             <div>
                 <ResponsiveAppBar />
                 {
-                    myNews.map((n) => {
+                    myNewsReverse.map((n) => {
                         return(
                             <div key={n._id} className="containerNews">
                                 <h2>{n.titleNew}</h2>
-                                <p>{n.textNew}</p>
                                 <img src={n.imageNew} alt="img not found" width='25%' />
                                 <h5>{n.dateNew}</h5>
+                                <Link to={'/DetailNews/' + n._id}>
+                                complete news
+                                </Link>
                             </div>
                         )
                     })
