@@ -29,13 +29,12 @@ console.log('SOY EL LOCAL', user)
       <ResponsiveAppBar />
       <div className="banner">
         <img
-          src="/snstbv.jpg"
+          src="/banner.jpg"
           alt="img not found"
-          width="100%"
-          height="400px"
         />
       </div>
 
+      <div className="backgroundImage"></div>
       <section className="sectionNewsAndCurious">
         <div className="sectionNews">
           <h2>News section</h2>

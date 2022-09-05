@@ -170,7 +170,6 @@ const ResponsiveAppBar = () => {
               LOGO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              
             <Button
                   onClick={handleAdminPanel}
                   sx={{ my: 2, color: "red", display: "block" }}
