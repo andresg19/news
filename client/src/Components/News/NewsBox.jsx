@@ -19,6 +19,10 @@ const NewsBox = () => {
     console.log('SOY EL LOCAL', user)
     console.log('soy la noticia', myNews)
 
+    let myNewsReverse = myNews.reverse();
+
+    let renderNewsBox = myNewsReverse.slice(0, 10);
+
     useEffect(() => {
         dispatch(getNews());
     }, [dispatch])
@@ -51,7 +55,7 @@ const NewsBox = () => {
    return(
     <div>
         {
-            myNews.map((n) => {
+            renderNewsBox.map((n) => {
                 if(user.length === 0) {
                     return(
                         <div key={n._id} className="containerNewsBox">

@@ -15,6 +15,11 @@ const CuriositiesBox = () => {
         ? JSON.parse(localStorage.getItem("actualUser"))
         : [],
       );
+     
+      let myCuriousReverse = myCurious.reverse();
+
+    let renderCuriousBox = myCuriousReverse.slice(0, 10);
+
 
     useEffect(() => {
         dispatch(getCuriosities());
@@ -48,7 +53,7 @@ const CuriositiesBox = () => {
    return(
     <div>
         {
-            myCurious.map((c) => {
+            renderCuriousBox.map((c) => {
                 if(user.length === 0) {
                     return(
                         <div key={c._id} className="containerCuriousBox">
