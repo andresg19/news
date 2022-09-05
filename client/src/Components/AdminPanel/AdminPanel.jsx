@@ -1,12 +1,10 @@
 import React from 'react';
-
+import AddNews from './AddNews';
 
 const AdminPanel = () => {
     return ( 
         <div>
-            <h1>
-                AdminPanel
-            </h1>
+            <AddNews />
         </div>
      );
 }

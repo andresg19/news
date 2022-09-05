@@ -131,6 +131,15 @@ export const userLogged = (payload) => {
     }
 }
 
+export const addOneNews = (payload) => {
+    return async function() {
+        let data = axios.post('http://localhost:3001/news/insert', payload);
+        return { 
+            data
+        };
+    }
+}
+
 export const clearState = () => {
     console.log("clearState");
     return {
