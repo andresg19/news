@@ -140,6 +140,15 @@ export const addOneNews = (payload) => {
     }
 }
 
+export const addOneCuriosity = (payload) => {
+    return async function() {
+        let data = axios.post('http://localhost:3001/curiosities/insert', payload);
+        return { 
+            data
+        };
+    }
+}
+
 export const clearState = () => {
     console.log("clearState");
     return {
