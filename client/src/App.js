@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, useRoutes, } from "react-router-dom";
+import AdminPanel from './Components/AdminPanel/AdminPanel';
 import Login from './Components/Authentication/Login';
 import Register from './Components/Authentication/Register';
 import Curiosities from './Components/Curiosities/Curiosities';
@@ -17,7 +18,8 @@ function App() {
     {path: "/Curiosities", element: <Curiosities />},
     {path: "/DetailCuriosities/:id", element: <DetailCuriosities />},
     {path: "/Register", element: <Register />},
-    {path: "/Login", element: <Login />}
+    {path: "/Login", element: <Login />},
+    {path: "AdminPanel", element: <AdminPanel />},
   ]);
   return element
 }
