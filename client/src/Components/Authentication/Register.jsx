@@ -26,13 +26,11 @@ errors.email = "Invalid email";
 }
 if(!input.password) {
 errors.pasword = "Password is required";
-} else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(input.password)) {
-errors.email =  "Password is required";
+} else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(input.password)) {
+errors.email =  "Minimum eight characters, at least one letter and one number";
 }
 if(!input.address) {
 errors.address = "Address is required";
-} else if(!/^[A-Za-z]+ [0-9]+$/.test(input.address)) {
-errors.address = "Name and street number"
 }
 return errors;
 }
@@ -126,10 +124,15 @@ const Register = () => {
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" name='name' placeholder='Name' onChange={handleChange}/>
+                <p>{errors.name}</p>
                 <input type="text" name='lastName' placeholder='Lastname' onChange={handleChange} />
+                <p>{errors.lastName}</p>
                 <input type="text" name='email' placeholder='Email' onChange={handleChange} />
+                <p>{errors.email}</p>
                 <input type="password" name='password' placeholder='Password' onChange={handleChange} />
+                <p>{errors.password}</p>
                 <input type="text" name='address' placeholder='Address' onChange={handleChange} />
+                <p>{errors.address}</p>
                 <button type='submit'>Confirm</button>
             </form>
         </div>
