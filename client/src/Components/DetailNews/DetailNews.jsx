@@ -76,7 +76,7 @@ const DetailNews = () => {
             <div className='containerDetail'>
              <ResponsiveAppBar />
                         <div className='detailNewsContainer'>
-                          <div className="detailContentCuriousDetail">
+                          <div className="detailContentNews">
                             <h3>{actualNew.titleNew}</h3>
                             <img src={actualNew.imageNew} alt="img not found" width='25%' />
                             <p>{actualNew.textNew}</p>

@@ -25,7 +25,7 @@
     background-color: rgba(68, 66, 66, 0.479);
 }
 
-.containerDetailCont {
+.detailNewsContainer {
     display: block;
     /* background-color: rgba(82, 82, 82, 0.315); */
     border-right: 1px solid rgba(61, 61, 61, 0.041);
@@ -38,24 +38,21 @@
     transition: transform .2s; /* Animation */
 }
 
-.detailContentCuriousDetail{
-    display: block;
-    width: 100%;
-}
 
-.detailContentCuriousDetail h3 {
+
+.detailContentNews h3 {
     color: rgba(15, 15, 15, 0.842);
     margin-left: 3%;
     font-family: 'Courier New';
 }
 
-.detailContentCuriousDetail p {
+.detailContentNews p {
     margin-left: 3%;
     color: rgba(15, 15, 15, 0.842);
     font-family: Arial;
 }
 
-.detailContentCuriousDetail img {
+.detailContentNews img {
     margin-top: 2%;
     margin-left: 35%;
 }
