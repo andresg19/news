@@ -34,18 +34,15 @@ console.log('SOY EL LOCAL', user)
         />
       </div>
 
-      <div className="backgroundImage"></div>
-      <section className="sectionNewsAndCurious">
-        <div className="sectionNews">
+      <div className="sectionNews">
           <h2>News section</h2>
           <NewsBox />
-        </div>
-        
-        <div className="sectionCurious">
+      </div>
+
+      <div className="sectionCurious">
           <h2>Curiosities section</h2>
           <CuriositiesBox />
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

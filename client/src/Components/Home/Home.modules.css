@@ -4,11 +4,12 @@
     max-width: 100%;
     height: 100%;
     height: auto;
-    background-image:url('../../../public/background.jpg');
+    /* background-image:url('../../../public/vintagebackground.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); */
+    background-color:rgba(68, 66, 66, 0.479);
     
 }
 
@@ -17,6 +18,7 @@
     margin-top: 1%;
     width: 900px;
     height: 280px;
+    opacity: 0.9;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.719);
@@ -50,34 +52,34 @@
 .tool{
     background-color: black;
 }
-.sectionNewsAndCurious {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+
+
+ .sectionNews {
+    display: block;
+    width: 80%;
+    margin-top: 10%;
+    background-color: rgba(136, 136, 136, 0.199);
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
- .sectionNews {
-    display: flex;
-    display: inline-table;
-    margin-left: 1%;
-    margin-top: 10%;
-    width: 30%;
-    /* height: 50%; */
-    /* background-color: rgba(137, 140, 151, 0.404);
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.952); */
-    
+.sectionNews h2 {
+    font-family: 'Courier New';
+}
+
+.sectionCurious h2 {
+    font-family: 'Courier New';
 }
 
  .sectionCurious {
-    display: flex;
-    display: inline-table;
-    margin-right: 1%;
+    display: block;
+    width: 80%;
     margin-top: 10%;
-    width: 30%;
-    /* background-color: rgba(137, 140, 151, 0.404);
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.952); */
-    
-}
+    background-color: rgba(136, 136, 136, 0.199);
+    margin-left: auto;
+    margin-right: auto;
+   
+ }
 
 

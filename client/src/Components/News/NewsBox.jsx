@@ -53,34 +53,37 @@ const NewsBox = () => {
         }
     }
    return(
-    <div>
+    <div className="containerNewsBox">
         {
             renderNewsBox.map((n) => {
                 if(user.length === 0) {
                     return(
-                        <div key={n._id} className="containerNewsBox">
-                            
-                            <h2>{n.titleNew}</h2>
+                        <div key={n._id} className="containerNewsRender">
+                            <div className="containerContentNews">
+                            <h3>{n.titleNew}</h3>
+                            <img src={n.imageNew} alt="img not found" width='40%' />
                             <p>{n.descriptionNew}</p>
-                            <img src={n.imageNew} alt="img not found" width='25%' />
                             <h5>{n.dateNew}</h5>
-                            
                             <button type="submit" name="buttonOffUser" onClick={handleUserBlock}>
                                 complete news
                             </button>
+                            </div>
                         </div>
                     )
                 } else {
                     return(
+                        <div key={n._id} className="containerNewsRender">
                         <div key={n._id} className="containerNewsBox">
-                            <h2>{n.titleNew}</h2>
+                            <h3>{n.titleNew}</h3>
                             <p>{n.descriptionNew}</p>
-                            <img src={n.imageNew} alt="img not found" width='25%' />
+                            <img src={n.imageNew} alt="img not found" width='40%' />
                             <h5>{n.dateNew}</h5>
                             <Link to={'/DetailNews/' + n._id}>
                                 complete news
                             </Link>
                         </div>
+                        </div>
+
                     )
 
                 }

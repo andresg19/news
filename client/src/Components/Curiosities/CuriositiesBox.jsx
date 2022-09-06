@@ -51,27 +51,31 @@ const CuriositiesBox = () => {
     }
 
    return(
-    <div>
+    <div className="containerCuriousBox">
         {
             renderCuriousBox.map((c) => {
                 if(user.length === 0) {
                     return(
-                        <div key={c._id} className="containerCuriousBox">
-                            <h2>{c.title}</h2>
-                            <img src={c.image} alt="img not found" width='25%' />
+                        <div key={c._id} className="containerCuriousRender">
+                          <div className="containerCuriousContent">
+                            <h3>{c.title}</h3>
+                            <img src={c.image} alt="img not found" width='40%' />
                             <button type="submit" name="buttonOffUser" onClick={handleUserBlock}>
                             complete curiosity
                             </button>
+                            </div>
                         </div>
                     )
                 }
                 return(
-                    <div key={c._id} className="containerCuriousBox">
-                        <h2>{c.title}</h2>
-                        <img src={c.image} alt="img not found" width='25%' />
+                    <div key={c._id} className="containerCuriousRender">
+                      <div className="containerCuriousContent">
+                        <h3>{c.title}</h3>
+                        <img src={c.image} alt="img not found" width='40%' />
                         <Link to={'/DetailCuriosities/' + c._id}>
                             complete curiosity
                         </Link>
+                        </div>
                     </div>
                 )
             })
