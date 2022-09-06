@@ -73,10 +73,10 @@ const NewsBox = () => {
                 } else {
                     return(
                         <div key={n._id} className="containerNewsRender">
-                        <div key={n._id} className="containerNewsBox">
+                        <div key={n._id} className="containerContentrNews">
                             <h3>{n.titleNew}</h3>
-                            <p>{n.descriptionNew}</p>
                             <img src={n.imageNew} alt="img not found" width='40%' />
+                            <p>{n.descriptionNew}</p>
                             <p>{n.dateNew}</p>
                             <Link to={'/DetailNews/' + n._id}>
                                 complete news

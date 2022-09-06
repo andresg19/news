@@ -72,6 +72,7 @@ const CuriositiesBox = () => {
                       <div className="containerCuriousContent">
                         <h3>{c.title}</h3>
                         <img src={c.image} alt="img not found" width='40%' />
+                        <br />
                         <Link to={'/DetailCuriosities/' + c._id}>
                             complete curiosity
                         </Link>
