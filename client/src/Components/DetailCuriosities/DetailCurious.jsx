@@ -62,20 +62,23 @@ const DetailCuriosities = () => {
           return ( 
             <div className='bloqueado'>
               <ResponsiveAppBar />
-                        <div className="containerCurious">
-                            <h2>{actualCurious.title}</h2>
-                            <p>{actualCurious.text}</p>
+                        <div className="containerDeCurious">
+                        <div className="detailContentCurious">
+                            <h3>{actualCurious.title}</h3>
                             <img src={actualCurious.image} alt="img not found" width='25%' />
+                            <p>{actualCurious.text}</p>
                         </div>
+                        </div>
+
             </div>
          );
         } else {
           return ( 
-            <div className='containerDetail'>
+            <div className='containerDetailCurious'>
               <ResponsiveAppBar />
-                        <div className="containerDetailCont">
-              <div className="detailContentCuriousDetail">
-                            <h2>{actualCurious.title}</h2>
+                        <div className="containerDecurious">
+                        <div className="detailContentCurious">
+                            <h3>{actualCurious.title}</h3>
                             <img src={actualCurious.image} alt="img not found" width='25%' />
                             <p>{actualCurious.text}</p>
                         </div>

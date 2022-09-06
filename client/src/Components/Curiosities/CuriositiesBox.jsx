@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getCuriosities } from "../../Redux/actions";
 import swal from "sweetalert"
-
+import './CuriositiesBox.modules.css'
 
 const CuriositiesBox = () => {
     const dispatch = useDispatch()
@@ -73,7 +73,7 @@ const CuriositiesBox = () => {
                         <img src={c.image} alt="img not found" width='25%' />
                         <br />
                         <Link to={'/DetailCuriosities/' + c._id}>
-                            complete curiosity
+                                <button>complete curiosity</button>
                         </Link>
                         </div>
                     </div>

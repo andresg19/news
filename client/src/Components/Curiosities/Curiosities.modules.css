@@ -31,13 +31,35 @@ display: inline-block;
 border-right: 1px solid rgba(61, 61, 61, 0.041);
 border-bottom: 1px solid rgba(61, 61, 61, 0.041);
 box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
-width: 35%;
+width: 20%;
 margin-left: 10%;
 margin-bottom: 2%;
 transition: transform .2s; /* Animation */
 }
 
 
+.containerCurious p {
+    color: rgba(15, 15, 15, 0.842);
+    margin-left: 3%;
+    font-family: 'Courier New';
+}
+
+
+
+.containerCurious img {
+    margin-left: 35%;
+    
+}
+
+
 .containerCurious:hover {
 transform: scale(1.1);
+}
+
+.containerCurious button{ 
+    margin-left: 20%;
+background-color: rgba(61, 61, 61, 0.171);
+border: none;
+cursor:pointer;
+font-family: 'Courier New';
 }

@@ -7,7 +7,7 @@
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
     width: 35%;
     margin-left: 10%;
-    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .containerContentNews{ 
@@ -35,7 +35,7 @@
 
 
 .containerContentNews button{ 
-margin-left: 35%;
+margin-left: 32%;
 background-color: rgba(61, 61, 61, 0.171);
 border: none;
 cursor:pointer;

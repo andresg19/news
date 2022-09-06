@@ -40,3 +40,24 @@
 .containerNews:hover {
     transform: scale(1.1);
 }
+
+.containerNews p {
+    color: rgba(15, 15, 15, 0.842);
+    margin-left: 3%;
+    font-family: 'Courier New';
+}
+
+
+
+.containerNews img {
+    margin-left: 35%;
+    
+}
+
+.containerNews button{ 
+    margin-left: 33%;
+background-color: rgba(61, 61, 61, 0.171);
+border: none;
+cursor:pointer;
+font-family: 'Courier New';
+}

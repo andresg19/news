@@ -1,43 +1,37 @@
-.containerNewsRender {
+
+.containerCuriousRender {
     display: inline-block;
-    /* background-color: rgba(82, 82, 82, 0.315); */
     border-right: 1px solid rgba(61, 61, 61, 0.041);
     border-bottom: 1px solid rgba(61, 61, 61, 0.041);
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
     width: 35%;
     margin-left: 10%;
-    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-.containerContentNews{ 
+.containerCuriousContent{ 
     display: block;
     width: 100%;
 }
 
-.containerContentNews h3 {
+.containerCuriousContent h3 {
     color: rgba(15, 15, 15, 0.842);
     margin-left: 3%;
     font-family: 'Courier New';
 }
 
-.containerContentNews p {
-    margin-left: 3%;
-    color: rgba(15, 15, 15, 0.842);
-    font-family: Arial;
+
+
+.containerCuriousContent img {
+    margin-left: 35%;
+    
 }
 
-.containerContentNews img {
-    margin-top: 2%;
+
+.containerCuriousContent button{ 
     margin-left: 25%;
-}
-
-
-
-.containerContentNews button{ 
-margin-left: 35%;
 background-color: rgba(61, 61, 61, 0.171);
 border: none;
 cursor:pointer;
 font-family: 'Courier New';
-
 }

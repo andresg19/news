@@ -62,8 +62,13 @@ const Curiosities = () => {
                 curiosities.map((c) => {
                     return(
                         <div key={c._id} className='containerCurious'>
-                            <h2>{c.title}</h2>
-                            <img src={c.image} alt="img not found" />
+                            <p>{c.title}</p>
+                            <img src={c.image} alt="img not found" width='25%'/>
+                            <Link to={'/DetailCuriosities/' + c._id}>
+                                <button>
+                                complete curiosity
+                                </button>
+                            </Link>
                         </div>
                     )
                 })
@@ -74,6 +79,7 @@ const Curiosities = () => {
       return ( 
         <div className='container'>
             <ResponsiveAppBar />
+
             {
                 curiosities.map((c) => {
                     return(
@@ -81,7 +87,9 @@ const Curiosities = () => {
                             <p>{c.title}</p>
                             <img src={c.image} alt="img not found" width='25%' />
                             <Link to={'/DetailCuriosities/' + c._id}>
+                                <button>
                                 complete curiosity
+                                </button>
                             </Link>
                         </div>
                     )

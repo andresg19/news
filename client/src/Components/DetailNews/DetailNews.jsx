@@ -63,11 +63,13 @@ const DetailNews = () => {
           return ( 
             <div className='bloqueado'>
              <ResponsiveAppBar />
-                        <div className="containerDetail">
+                        <div className="detailNewsContainer">
+                        <div className="detailContentNews">
                             <h2>{actualNew.titleNew}</h2>
-                            <p>{actualNew.textNew}</p>
                             <img src={actualNew.imageNew} alt="img not found" width='25%' />
+                            <p>{actualNew.textNew}</p>
                             <h5>{actualNew.dateNew}</h5>
+                          </div>
                         </div>
             </div> 
             )
