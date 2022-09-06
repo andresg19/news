@@ -35,7 +35,7 @@ const Curiosities = () => {
             disableScroll()
                 swal({
                     title: 'Log in',
-                    text: 'you must log in to see the news.',
+                    text: 'you must log in to see the curiosities.',
                     type: 'Alert',
                     buttons: {
                       confirm: {
