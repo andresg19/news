@@ -63,7 +63,7 @@ const NewsBox = () => {
                             <h3>{n.titleNew}</h3>
                             <img src={n.imageNew} alt="img not found" width='40%' />
                             <p>{n.descriptionNew}</p>
-                            <h5>{n.dateNew}</h5>
+                            <p>{n.dateNew}</p>
                             <button type="submit" name="buttonOffUser" onClick={handleUserBlock}>
                                 complete news
                             </button>
@@ -77,7 +77,7 @@ const NewsBox = () => {
                             <h3>{n.titleNew}</h3>
                             <p>{n.descriptionNew}</p>
                             <img src={n.imageNew} alt="img not found" width='40%' />
-                            <h5>{n.dateNew}</h5>
+                            <p>{n.dateNew}</p>
                             <Link to={'/DetailNews/' + n._id}>
                                 complete news
                             </Link>

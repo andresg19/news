@@ -5,6 +5,7 @@ import ResponsiveAppBar from "../NavBar/Nav";
 import "./Home.modules.css";
 import CuriositiesBox from "../Curiosities/CuriositiesBox";
 import { getUsers } from "../../Redux/actions";
+import Carousel from "../Carousel/Carousel";
 // import { getNews } from "../../Redux/actions";
 
 const Home = () => {
@@ -35,11 +36,17 @@ console.log('SOY EL LOCAL', user)
       </div>
 
       <div className="sectionNews">
+      <div class="paperclip"></div>
           <h2>News section</h2>
           <NewsBox />
       </div>
+      
+      <div className="Carousel">
+      <Carousel />
+      </div>
 
       <div className="sectionCurious">
+      <div class="paperclip"></div>
           <h2>Curiosities section</h2>
           <CuriositiesBox />
       </div>

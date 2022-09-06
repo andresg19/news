@@ -22,7 +22,6 @@
 }
 
 .containerContentNews p {
-    color: azure;
     margin-left: 3%;
     color: rgba(15, 15, 15, 0.842);
     font-family: Arial;
@@ -33,12 +32,14 @@
     margin-left: 25%;
 }
 
-.containerContentNews h5 {
-    margin-left: 75%;
-    color: rgba(15, 15, 15, 0.842);
-    font-family: Arial;
-}
+
 
 .containerContentNews button{ 
 margin-left: 35%;
+background-color: rgba(61, 61, 61, 0.171);
+border: none;
+cursor:pointer;
+font-family: 'Courier New';
+
 }
+
