@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../Redux/actions';
 import { useNavigate } from "react-router-dom";
+import ResponsiveAppBar from "../NavBar/Nav"
 import swal from "sweetalert";
+import './Register.modules.css'
 
 
 //Validacion de campos
@@ -27,7 +29,7 @@ errors.email = "Invalid email";
 if(!input.password) {
 errors.pasword = "Password is required";
 } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(input.password)) {
-errors.email =  "Minimum eight characters, at least one letter and one number";
+errors.password =  "Minimum eight characters, at least one letter and one number";
 }
 if(!input.address) {
 errors.address = "Address is required";
@@ -120,22 +122,35 @@ const Register = () => {
     }
 
     return ( 
-        <div>
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name='name' placeholder='Name' onChange={handleChange}/>
+      <div className='containerRegister'>
+          <ResponsiveAppBar />
+
+            <form className='containerFormRegister' onSubmit={handleSubmit}>
+               <br /> 
+               <input type="text" autoComplete='off' name='name' placeholder='Name' onChange={handleChange}/>
+                <br />
                 <p>{errors.name}</p>
-                <input type="text" name='lastName' placeholder='Lastname' onChange={handleChange} />
+                <br />
+                <input type="text" autoComplete='off' name='lastName' placeholder='Lastname' onChange={handleChange} />
+                <br />
                 <p>{errors.lastName}</p>
-                <input type="text" name='email' placeholder='Email' onChange={handleChange} />
+                <br />
+                <input type="text" autoComplete='off' name='email' placeholder='Email' onChange={handleChange} />
+                <br />
                 <p>{errors.email}</p>
-                <input type="password" name='password' placeholder='Password' onChange={handleChange} />
+                <br />
+                <input type="password" autoComplete='off' name='password' placeholder='Password' onChange={handleChange} />
+                <br />
                 <p>{errors.password}</p>
-                <input type="text" name='address' placeholder='Address' onChange={handleChange} />
+                <br />
+                <input type="text" autoComplete='off' name='address' placeholder='Address' onChange={handleChange} />
+                <br />
                 <p>{errors.address}</p>
+                <br />
                 <button type='submit'>Confirm</button>
             </form>
-        </div>
+      </div>
+       
      );
 }
  
