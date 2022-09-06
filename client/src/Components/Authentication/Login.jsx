@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getUsers, isLogged, userLogged } from '../../Redux/actions';
 import swal from "sweetalert";
-
+import ResponsiveAppBar from '../NavBar/Nav';
+import './Login.modules.css'
 
 const Login = () => {
     const users = useSelector((state) => state.users)
@@ -63,14 +64,15 @@ const Login = () => {
 
 
     return ( 
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name='email' placeholder='Email' onChange={handleChange} />
-                <input type="password" name='password' placeholder='Password' onChange={handleChange} />
-                <button type='submit'>Enter the site</button>
-            </form>
-        </div>
+        <div className='containerLogin'>
+        <ResponsiveAppBar />
+          <form className='containerFormLogin' onSubmit={handleSubmit}>
+         <p>Enter your data</p>
+             <input type="text" name='email' placeholder='Email' onChange={handleChange} />
+              <input type="password" name='password' placeholder='Password' onChange={handleChange} />
+              <button type='submit'>Confirm</button>
+          </form>
+    </div>
      );
 }
  
