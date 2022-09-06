@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { clearState, getNewsById } from "../../Redux/actions/index";
+import ResponsiveAppBar from '../NavBar/Nav';
+import './DetailNews.modules.css'
 import swal from "sweetalert"
 // import News from '../News/News';
 
@@ -60,8 +62,8 @@ const DetailNews = () => {
         if(user.length === 0) {
           return ( 
             <div className='bloqueado'>
-             
-                        <div className="containerNews">
+             <ResponsiveAppBar />
+                        <div className="containerDetail">
                             <h2>{actualNew.titleNew}</h2>
                             <p>{actualNew.textNew}</p>
                             <img src={actualNew.imageNew} alt="img not found" width='25%' />
@@ -71,15 +73,18 @@ const DetailNews = () => {
             )
         } else {
           return ( 
-            <div className='detailnewsContainer'>
-             
-                        <div className="containerNews">
-                            <h2>{actualNew.titleNew}</h2>
-                            <p>{actualNew.textNew}</p>
+            <div className='containerDetail'>
+             <ResponsiveAppBar />
+                        <div className='detailNewsContainer'>
+                          <div className="detailContentCuriousDetail">
+                            <h3>{actualNew.titleNew}</h3>
                             <img src={actualNew.imageNew} alt="img not found" width='25%' />
-                            <h5>{actualNew.dateNew}</h5>
+                            <p>{actualNew.textNew}</p>
+                            <p>{actualNew.dateNew}</p>
+                        </div>
                         </div>
             </div>
+
           )
         }
     

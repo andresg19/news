@@ -5,6 +5,7 @@ import { clearState, getCuriositiesById } from "../../Redux/actions/index";
 // import News from '../News/News';
 import swal from "sweetalert";
 import './DetailCuriosities.modules.css'
+import ResponsiveAppBar from "../NavBar/Nav";
 
 const DetailCuriosities = () => {
     const dispatch = useDispatch();
@@ -60,7 +61,8 @@ const DetailCuriosities = () => {
         if(user.length === 0) {
           return ( 
             <div className='bloqueado'>
-                        <div className="containerNews">
+              <ResponsiveAppBar />
+                        <div className="containerCurious">
                             <h2>{actualCurious.title}</h2>
                             <p>{actualCurious.text}</p>
                             <img src={actualCurious.image} alt="img not found" width='25%' />
@@ -69,11 +71,14 @@ const DetailCuriosities = () => {
          );
         } else {
           return ( 
-            <div className='detailnewsContainer'>
-                        <div className="containerNews">
+            <div className='containerDetail'>
+              <ResponsiveAppBar />
+                        <div className="containerDetailCont">
+              <div className="detailContentCuriousDetail">
                             <h2>{actualCurious.title}</h2>
-                            <p>{actualCurious.text}</p>
                             <img src={actualCurious.image} alt="img not found" width='25%' />
+                            <p>{actualCurious.text}</p>
+                        </div>
                         </div>
             </div>
          );

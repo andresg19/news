@@ -64,7 +64,7 @@ const News = () => {
                     myNewsReverse.map((n) => {
                         return(
                             <div key={n._id} className="containerNews">
-                                <h2>{n.titleNew}</h2>
+                                <p>{n.titleNew}</p>
                                 <img src={n.imageNew} alt="img not found" width='25%' />
                                 <h5>{n.dateNew}</h5>
                             </div>
@@ -75,13 +75,13 @@ const News = () => {
            )
     } else {
         return(
-            <div>
+            <div className="container">
                 <ResponsiveAppBar />
                 {
                     myNewsReverse.map((n) => {
                         return(
                             <div key={n._id} className="containerNews">
-                                <h2>{n.titleNew}</h2>
+                                <p>{n.titleNew}</p>
                                 <img src={n.imageNew} alt="img not found" width='25%' />
                                 <h5>{n.dateNew}</h5>
                                 <Link to={'/DetailNews/' + n._id}>

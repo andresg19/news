@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getCuriosities } from '../../Redux/actions';
 import ResponsiveAppBar from '../NavBar/Nav';
 import swal from "sweetalert";
+import './Curiosities.modules.css'
 
 
 const Curiosities = () => {
@@ -56,9 +57,7 @@ const Curiosities = () => {
     if(user.length === 0) {
       return ( 
         <div className='bloqueado'>
-        <div className='container curiosities'>
             <ResponsiveAppBar />
-            <h1>Curiosities</h1>
             {
                 curiosities.map((c) => {
                     return(
@@ -70,19 +69,17 @@ const Curiosities = () => {
                 })
             }
         </div>
-        </div>
      );
     } else {
       return ( 
-        <div>
+        <div className='container'>
             <ResponsiveAppBar />
-            <h1>Curiosities</h1>
             {
                 curiosities.map((c) => {
                     return(
                         <div key={c._id} className='containerCurious'>
-                            <h2>{c.title}</h2>
-                            <img src={c.image} alt="img not found" />
+                            <p>{c.title}</p>
+                            <img src={c.image} alt="img not found" width='25%' />
                             <Link to={'/DetailCuriosities/' + c._id}>
                                 complete curiosity
                             </Link>

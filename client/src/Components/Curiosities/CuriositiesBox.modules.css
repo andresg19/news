@@ -1,6 +1,6 @@
-
-.containerCuriousRender {
+.containerNewsRender {
     display: inline-block;
+    /* background-color: rgba(82, 82, 82, 0.315); */
     border-right: 1px solid rgba(61, 61, 61, 0.041);
     border-bottom: 1px solid rgba(61, 61, 61, 0.041);
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
@@ -9,28 +9,35 @@
     margin-top: 2%;
 }
 
-.containerCuriousContent{ 
+.containerContentNews{ 
     display: block;
     width: 100%;
 }
 
-.containerCuriousContent h3 {
+.containerContentNews h3 {
     color: rgba(15, 15, 15, 0.842);
     margin-left: 3%;
     font-family: 'Courier New';
 }
 
+.containerContentNews p {
+    margin-left: 3%;
+    color: rgba(15, 15, 15, 0.842);
+    font-family: Arial;
+}
 
-
-.containerCuriousContent img {
-    margin-left: 30%;
+.containerContentNews img {
+    margin-top: 2%;
+    margin-left: 25%;
 }
 
 
-.containerCuriousContent button{ 
-    margin-left: 30%;
+
+.containerContentNews button{ 
+margin-left: 35%;
 background-color: rgba(61, 61, 61, 0.171);
 border: none;
 cursor:pointer;
 font-family: 'Courier New';
+
 }
