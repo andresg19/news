@@ -4,8 +4,10 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddCuriosities from './AddCuriosities';
 import AddNews from './AddNews';
+import ResponsiveAppBar from "../NavBar/Nav"
 import swal from "sweetalert"
 import './AdminPanel.modules.css'
+
 
 const AdminPanel = () => {
     let navigate = useNavigate();
@@ -54,6 +56,8 @@ const AdminPanel = () => {
     if (!user.isAdmin) {
         return ( 
             <div className='bloqueado'>
+              <div className='containerContentPanel'></div>
+                <ResponsiveAppBar />
                 <AddNews />
                 <br />
                 <AddCuriosities />
@@ -61,10 +65,12 @@ const AdminPanel = () => {
          );
     } else {
         return ( 
-            <div>
+            <div className='containerPanel'   >
+              {/* <ResponsiveAppBar /> */}
+              <div className='containerContentPanel'>
                 <AddNews />
-                <br />
                 <AddCuriosities />
+              </div>
             </div>
          );
     }

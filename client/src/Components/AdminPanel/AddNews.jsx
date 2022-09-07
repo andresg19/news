@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addOneNews } from '../../Redux/actions';
+import './AddNews.modules.css';
 
 
 const AddNews = () => {
@@ -24,8 +25,9 @@ const AddNews = () => {
     }
     
     return ( 
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='containerAddNews'>
+            <form className='containerFormNews' onSubmit={handleSubmit}>
+            <p>Add a news</p>
                 <input type="text" name='titleNew' placeholder='Title' onChange={handleChange} />
                 <input type="text" name='descriptionNew' placeholder='Description' onChange={handleChange} />
                 <input type="text" name='textNew' placeholder='Narration' onChange={handleChange} />

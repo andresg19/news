@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addOneCuriosity } from '../../Redux/actions';
+import './AddCuriosities.modules.css';
 
 
 const AddCuriosities = () => {
@@ -22,11 +23,16 @@ const AddCuriosities = () => {
     }
     
     return ( 
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='containerAddCuriosity'>
+            <form className='containerFormCuriosity' onSubmit={handleSubmit}>
+            <p>Add a curiosity</p>
+                <br />
                 <input type="text" name='title' placeholder='Title' onChange={handleChange} />
+                <br />
                 <input type="text" name='text' placeholder='Narration' onChange={handleChange} />
+                <br />
                 <input type="text" name='image' placeholder='Link image' onChange={handleChange} />
+                <br />
                 <button type='submit'>
                     Add curiosity
                 </button>
