@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addOneCuriosity } from '../../Redux/actions';
-import './AddCuriosities.modules.css';
+
 
 
 const AddCuriosities = () => {

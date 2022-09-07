@@ -1,0 +1,136 @@
+.navigation {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 0rem;
+    background-color: rgb(20, 20, 20);
+    box-shadow: 2 2px 2px 0px rgba(255, 255, 255, 0.123);
+  }
+
+  .brand-name {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+font-size: 17px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #b1a9a9;
+font-weight: 700;
+font-style: italic;
+font-variant: normal;
+text-transform: lowercase;
+    margin-left: 1rem;
+  }
+  .navigation-menu {
+    margin-left: auto;
+  }
+
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+   
+  }
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+  .navigation-menu li a {
+    text-decoration: none;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 12px;
+        letter-spacing: 1.2px;
+        word-spacing: -1.2px;
+        color: #b1a9a9;
+        font-weight: 700;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+    }
+
+    .navigation-menu li a:hover {
+        text-decoration: none;
+            display: block;
+            width: 100%;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            letter-spacing: 1.2px;
+            word-spacing: -1.2px;
+            color: #b1a9a9;
+            background-color: rgba(0, 0, 0, 0.11);
+            font-weight: 700;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase;
+        }
+    
+
+  .hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #b1a9a9;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  .hamburger:hover {
+    background-color: #b1a9a9;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navigation-menu ul {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navigation-menu ul {
+      position: absolute;
+      top: 70%;
+      right: 0;
+      flex-direction: column;
+      width: auto;
+      height: auto;
+      background-color: rgba(24, 22, 22, 0.096);
+      border-top: 1px solid black;
+    }
+    .navigation-menu li {
+      text-align: center;
+      margin: 0;
+    }
+    .navigation-menu li a {
+      color: black;
+      width: 97%;
+      background-color: rgba(168, 167, 167, 0.034);
+      padding: 1.5%;
+      font-size: 8px;
+      margin-top: 10%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navigation-menu ul {
+      dipslay: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navigation-menu.expanded ul {
+      display: block;
+    }
+  }

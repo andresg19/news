@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import swal from "sweetalert";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import './Nav.modules.css'
 
 const pages = ['News', 'Curiosities'];
 
@@ -26,8 +27,12 @@ const ResponsiveAppBar = () => {
   );
   let navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
 
+  const [isNavExpanded, setIsNavExpanded] = useState(false)
+  
+  const onClick = () => {
+    setIsNavExpanded(!isNavExpanded)
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -74,382 +79,514 @@ const ResponsiveAppBar = () => {
   }
 
   
-  if(user.isAdmin === true) {
-    return (
-      <AppBar position="static">
-        <Container maxWidth="xl" className="tool">
-          <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "red",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
+  // if(user.isAdmin === true) {
+  //   return (
+  //     <AppBar position="static">
+  //       <Container maxWidth="xl" className="tool">
+  //         <Toolbar disableGutters>
+  //           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+  //           <Typography
+  //             variant="h6"
+  //             noWrap
+  //             component="a"
+  //             href="/"
+  //             sx={{
+  //               mr: 2,
+  //               display: { xs: "none", md: "flex" },
+  //               fontFamily: "monospace",
+  //               fontWeight: 700,
+  //               letterSpacing: ".3rem",
+  //               color: "red",
+  //               textDecoration: "none",
+  //             }}
+  //           >
+  //             LOGO
+  //           </Typography>
             
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                <Button
-                  onClick={handleAdminPanel}
-                  sx={{ my: 2, color: "red", display: "block" }}
-                >
-                  Admin Panel
-                </Button>
+  //           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+  //             <IconButton
+  //               size="large"
+  //               aria-label="account of current user"
+  //               aria-controls="menu-appbar"
+  //               aria-haspopup="true"
+  //               onClick={handleOpenNavMenu}
+  //               color="inherit"
+  //             >
+  //               <MenuIcon />
+  //             </IconButton>
+  //             <Menu
+  //               id="menu-appbar"
+  //               anchorEl={anchorElNav}
+  //               anchorOrigin={{
+  //                 vertical: "bottom",
+  //                 horizontal: "left",
+  //               }}
+  //               keepMounted
+  //               transformOrigin={{
+  //                 vertical: "top",
+  //                 horizontal: "left",
+  //               }}
+  //               open={Boolean(anchorElNav)}
+  //               onClose={handleCloseNavMenu}
+  //               sx={{
+  //                 display: { xs: "block", md: "none" },
+  //               }}
+  //             >
+  //               <Button
+  //                 onClick={handleAdminPanel}
+  //                 sx={{ my: 2, color: "red", display: "block" }}
+  //               >
+  //                 Admin Panel
+  //               </Button>
   
-               <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
-                News
-               </Button>
+  //              <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
+  //               News
+  //              </Button>
   
-               <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
-                Curiosities
-               </Button>
+  //              <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
+  //               Curiosities
+  //              </Button>
   
-                <Button
-                  onClick={handleLogOut}
-                  sx={{ my: 2, color: "red", display: "block" }}
-                >
-                  log out
-                </Button>
-              </Menu>
-            </Box>
-            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "red",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-                  onClick={handleAdminPanel}
-                  sx={{ my: 2, color: "red", display: "block" }}
-                >
-                  Admin Panel
-                </Button>
+  //               <Button
+  //                 onClick={handleLogOut}
+  //                 sx={{ my: 2, color: "red", display: "block" }}
+  //               >
+  //                 log out
+  //               </Button>
+  //             </Menu>
+  //           </Box>
+  //           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+  //           <Typography
+  //             variant="h5"
+  //             noWrap
+  //             component="a"
+  //             href=""
+  //             sx={{
+  //               mr: 2,
+  //               display: { xs: "flex", md: "none" },
+  //               flexGrow: 1,
+  //               fontFamily: "monospace",
+  //               fontWeight: 700,
+  //               letterSpacing: ".3rem",
+  //               color: "red",
+  //               textDecoration: "none",
+  //             }}
+  //           >
+  //             LOGO
+  //           </Typography>
+  //           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+  //           <Button
+  //                 onClick={handleAdminPanel}
+  //                 sx={{ my: 2, color: "red", display: "block" }}
+  //               >
+  //                 Admin Panel
+  //               </Button>
   
              
-            <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
-                News
-               </Button>
+  //           <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
+  //               News
+  //              </Button>
   
-               <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
-                Curiosities
-               </Button>
+  //              <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
+  //               Curiosities
+  //              </Button>
   
-              <Button
-                  onClick={handleLogOut}
-                  sx={{ my: 2, color: "red", display: "block" }}
-                >
-                  log out
-                </Button>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    );
+  //             <Button
+  //                 onClick={handleLogOut}
+  //                 sx={{ my: 2, color: "red", display: "block" }}
+  //               >
+  //                 log out
+  //               </Button>
+  //           </Box>
+  //         </Toolbar>
+  //       </Container>
+  //     </AppBar>
+  //   );
+  // }
+  if(user.isAdmin === true) {
+    return(
+      <nav className="navigation">
+      <a href="/" className="brand-name">
+        Rock garage
+      </a>
+      <button className="hamburger" onClick={onClick} >
+        {/* icon from heroicons.com */}
+        
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+         className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/News">News</a>
+          </li>
+          <li>
+            <a href="/Curiosities">Curiosities</a>
+          </li>
+          <li>
+            <a href="/AdminPanel">Admin Panel</a>
+          </li>
+          <li>
+            <a onClick={handleLogOut}>Log out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    )
+  } else if(user.length !== 0) {
+    return(
+      <nav className="navigation">
+      <a href="/" className="brand-name">
+        Rock garage
+      </a>
+      <button className="hamburger" onClick={onClick} >
+        {/* icon from heroicons.com */}
+        
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+         className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/News">News</a>
+          </li>
+          <li>
+            <a href="/Curiosities">Curiosities</a>
+          </li>
+          <li>
+            <a onClick={handleLogOut}>Log out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    )
+  } 
+  if(user.length === 0) {
+    return(
+      <nav className="navigation">
+      <a href="/" className="brand-name">
+        Rock garage
+      </a>
+      <button className="hamburger" onClick={onClick} >
+        {/* icon from heroicons.com */}
+        
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+         className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }>
+        <ul>
+          <li>
+            <a href="/Login">Login</a>
+          </li>
+          <li>
+            <a href="/Register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    )
   }
+  }
+  export default ResponsiveAppBar;
 
-if( user.length === 0) {
+// if( user.length === 0) {
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl" className="tool">
-        <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+//   return (
+//     <AppBar position="static">
+//       <Container maxWidth="xl" className="tool">
+//         <Toolbar disableGutters>
+//           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+//           <Typography
+//             variant="h6"
+//             noWrap
+//             component="a"
+//             href="/"
+//             sx={{
+//               mr: 2,
+//               display: { xs: "none", md: "flex" },
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "red",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
           
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
+//           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+//             <IconButton
+//               size="large"
+//               aria-label="account of current user"
+//               aria-controls="menu-appbar"
+//               aria-haspopup="true"
+//               onClick={handleOpenNavMenu}
+//               color="inherit"
+//             >
+//               <MenuIcon />
+//             </IconButton>
+//             <Menu
+//               id="menu-appbar"
+//               anchorEl={anchorElNav}
+//               anchorOrigin={{
+//                 vertical: "bottom",
+//                 horizontal: "left",
+//               }}
+//               keepMounted
+//               transformOrigin={{
+//                 vertical: "top",
+//                 horizontal: "left",
+//               }}
+//               open={Boolean(anchorElNav)}
+//               onClose={handleCloseNavMenu}
+//               sx={{
+//                 display: { xs: "block", md: "none" },
+//               }}
+//             >
+//               {/* {pages.map((page) => (
+//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+//                   <Typography textAlign="center">{page}</Typography>
+//                 </MenuItem>
+//               ))} */}
 
-              <Button
-                onClick={handleLogIn}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                log in
-              </Button>
-              <Button
-                onClick={handleRegister}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                register
-              </Button>
+//               <Button
+//                 onClick={handleLogIn}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 log in
+//               </Button>
+//               <Button
+//                 onClick={handleRegister}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 register
+//               </Button>
               
-            </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
+//             </Menu>
+//           </Box>
+//           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+//           <Typography
+//             variant="h5"
+//             noWrap
+//             component="a"
+//             href=""
+//             sx={{
+//               mr: 2,
+//               display: { xs: "flex", md: "none" },
+//               flexGrow: 1,
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "red",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
+//           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+//             {/* {pages.map((page) => (
               
-              <Button
-                key={page}
-                href={`/${page}`}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                {page}
-              </Button>
+//               <Button
+//                 key={page}
+//                 href={`/${page}`}
+//                 onClick={handleCloseNavMenu}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 {page}
+//               </Button>
               
-            ))} */}
-            <Button
-                onClick={handleLogIn}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                log in
-              </Button>
-              <Button
-                onClick={handleRegister}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                register
-              </Button>
-          </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleLogOut}
-              sx={{ my: 2, color: "red", display: "block" }}
-            >
-              log out
-            </Button>
-          </Box> */}
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+//             ))} */}
+//             <Button
+//                 onClick={handleLogIn}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 log in
+//               </Button>
+//               <Button
+//                 onClick={handleRegister}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 register
+//               </Button>
+//           </Box>
+//           {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+//             <Button
+//               onClick={handleLogOut}
+//               sx={{ my: 2, color: "red", display: "block" }}
+//             >
+//               log out
+//             </Button>
+//           </Box> */}
+//         </Toolbar>
+//       </Container>
+//     </AppBar>
+//   );
 
-} else if(user.length !== 0){
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl" className="tool">
-        <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+// } else if(user.length !== 0){
+//   return (
+//     <AppBar position="static">
+//       <Container maxWidth="xl" className="tool">
+//         <Toolbar disableGutters>
+//           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+//           <Typography
+//             variant="h6"
+//             noWrap
+//             component="a"
+//             href="/"
+//             sx={{
+//               mr: 2,
+//               display: { xs: "none", md: "flex" },
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "red",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
           
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-             <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
-              News
-             </Button>
+//           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+//             <IconButton
+//               size="large"
+//               aria-label="account of current user"
+//               aria-controls="menu-appbar"
+//               aria-haspopup="true"
+//               onClick={handleOpenNavMenu}
+//               color="inherit"
+//             >
+//               <MenuIcon />
+//             </IconButton>
+//             <Menu
+//               id="menu-appbar"
+//               anchorEl={anchorElNav}
+//               anchorOrigin={{
+//                 vertical: "bottom",
+//                 horizontal: "left",
+//               }}
+//               keepMounted
+//               transformOrigin={{
+//                 vertical: "top",
+//                 horizontal: "left",
+//               }}
+//               open={Boolean(anchorElNav)}
+//               onClose={handleCloseNavMenu}
+//               sx={{
+//                 display: { xs: "block", md: "none" },
+//               }}
+//             >
+//              <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
+//               News
+//              </Button>
 
-             <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
-              Curiosities
-             </Button>
+//              <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
+//               Curiosities
+//              </Button>
 
-              <Button
-                onClick={handleLogOut}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                log out
-              </Button>
-              <Button
-                onClick={handleRegister}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                register
-              </Button>
-            </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "red",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+//               <Button
+//                 onClick={handleLogOut}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 log out
+//               </Button>
+//               <Button
+//                 onClick={handleRegister}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 register
+//               </Button>
+//             </Menu>
+//           </Box>
+//           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+//           <Typography
+//             variant="h5"
+//             noWrap
+//             component="a"
+//             href=""
+//             sx={{
+//               mr: 2,
+//               display: { xs: "flex", md: "none" },
+//               flexGrow: 1,
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               letterSpacing: ".3rem",
+//               color: "red",
+//               textDecoration: "none",
+//             }}
+//           >
+//             LOGO
+//           </Typography>
+//           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
            
-          <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
-              News
-             </Button>
+//           <Button href='/News' sx={{ my: 2, color: "red", display: "block" }}>
+//               News
+//              </Button>
 
-             <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
-              Curiosities
-             </Button>
+//              <Button href='/Curiosities' sx={{ my: 2, color: "red", display: "block" }}>
+//               Curiosities
+//              </Button>
 
-            <Button
-                onClick={handleLogOut}
-                sx={{ my: 2, color: "red", display: "block" }}
-              >
-                log out
-              </Button>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+//             <Button
+//                 onClick={handleLogOut}
+//                 sx={{ my: 2, color: "red", display: "block" }}
+//               >
+//                 log out
+//               </Button>
+//           </Box>
+//         </Toolbar>
+//       </Container>
+//     </AppBar>
+//   );
 
-}  
+// }  
 
 
-};
-export default ResponsiveAppBar;
+// };

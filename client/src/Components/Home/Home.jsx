@@ -37,7 +37,7 @@ console.log('SOY EL LOCAL', user)
 
       <div className="sectionNews">
       <div class="paperclip"></div>
-          <h2>News section</h2>
+          <h2>Recent news</h2>
           <NewsBox />
       </div>
       
@@ -47,7 +47,7 @@ console.log('SOY EL LOCAL', user)
 
       <div className="sectionCurious">
       <div class="paperclip"></div>
-          <h2>Curiosities section</h2>
+          <h2>Latest curiosities</h2>
           <CuriositiesBox />
       </div>
     </div>

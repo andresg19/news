@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addOneNews } from '../../Redux/actions';
-import './AddNews.modules.css';
+
 
 
 const AddNews = () => {
