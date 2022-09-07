@@ -1,4 +1,4 @@
-.navigation {
+/* .navigation {
     height: 40px;
     width: 100%;
     display: flex;
@@ -133,4 +133,54 @@ text-transform: lowercase;
     .navigation-menu.expanded ul {
       display: block;
     }
+  } */
+
+  .navbar {
+    width: 100%;
   }
+ .container-fluid {
+  width: 100%;
+  
+ }
+ .navbar-toggler-icon { 
+  background-image: url("https://img.icons8.com/material-two-tone/344/menu--v1.png");
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.315);
+  } 
+
+  .navbar-brand {
+    font-family: "Courier New";
+font-size: 17px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #b1a9a938;
+font-weight: 700;
+font-style: italic;
+font-variant: normal;
+text-transform: lowercase;
+    margin-left: 1rem;
+  }
+
+
+
+.offcanvas-title  {
+  color: rgba(139, 134, 134, 0.829);
+  font-family: 'Courier New';
+  font-size: 35px;
+}
+
+.nav-item a {
+  font-size: 20px;
+  color: rgba(139, 134, 134, 0.829);
+  font-family: 'Courier New';
+
+}
+
+.nav-item a:hover {
+  font-size: 21px;
+  color: rgba(83, 81, 81, 0.829);
+  font-family: 'Courier New';
+
+}

@@ -34,30 +34,12 @@ const Login = () => {
         e.preventDefault();
         let data = input
 
-        users.forEach((u) => {
-
-                // })dispatch(isLogged(u.email, body))
-                if(u.email === data.email && u.password === data.password) {
-                    // dispatch(isLogged(u.email, body));
-                    dispatch(userLogged(u))
-                    navigate('/')
-            //    actualUser.push(u)
-            //    dispatch(userLogged(actualUser));
-
-           } else if(u.email !== data.email && u.password !== data.password){
-            swal({
-            
-                text: 'Check the entered data',
-                type: 'Error',
-                buttons: {
-                  confirm: {
-                    text: 'Confirmar',
-                    value: 'confirm',
-                  },
-                },
-              })
-           }
-        })
+        users.filter((u) => {
+          if (u.email === data.email && u.password === data.password) {
+            dispatch(userLogged(u));
+            navigate("/");
+          }
+        });
 
     
     }

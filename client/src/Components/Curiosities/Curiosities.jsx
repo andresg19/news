@@ -18,6 +18,8 @@ const Curiosities = () => {
       )
     let curiosities = useSelector((state) => state.curiosities)
 
+    let curiositiesReverse = curiosities.reverse()
+
     function disableScroll() {
         // Get the current page scroll position
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -59,7 +61,7 @@ const Curiosities = () => {
         <div className='bloqueado'>
             <ResponsiveAppBar />
             {
-                curiosities.map((c) => {
+                curiositiesReverse.map((c) => {
                     return(
                         <div key={c._id} className='containerCurious'>
                             <p>{c.title}</p>
@@ -82,7 +84,7 @@ const Curiosities = () => {
             <ResponsiveAppBar />
 
             {
-                curiosities.map((c) => {
+                curiositiesReverse.map((c) => {
                     return(
                         <div key={c._id} className='containerCurious'>
                             <p>{c.title}</p>

@@ -23,7 +23,6 @@ console.log('SOY EL LOCAL', user)
 
   useEffect(() => {
     dispatch(getUsers())
-
 }, [])
 
   return (
