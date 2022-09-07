@@ -6,6 +6,7 @@ import "./Home.modules.css";
 import CuriositiesBox from "../Curiosities/CuriositiesBox";
 import { getUsers } from "../../Redux/actions";
 import Carousel from "../Carousel/Carousel";
+import Footer from "../Footer/Footer";
 // import { getNews } from "../../Redux/actions";
 
 const Home = () => {
@@ -50,6 +51,7 @@ console.log('SOY EL LOCAL', user)
           <h2>Latest curiosities</h2>
           <CuriositiesBox />
       </div>
+      <Footer />
     </div>
   );
 };

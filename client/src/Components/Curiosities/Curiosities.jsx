@@ -6,7 +6,7 @@ import { getCuriosities } from '../../Redux/actions';
 import ResponsiveAppBar from '../NavBar/Nav';
 import swal from "sweetalert";
 import './Curiosities.modules.css'
-
+import Footer from "../Footer/Footer"
 
 const Curiosities = () => {
     const dispatch = useDispatch();
@@ -73,6 +73,7 @@ const Curiosities = () => {
                     )
                 })
             }
+            <Footer />
         </div>
      );
     } else {
@@ -95,27 +96,11 @@ const Curiosities = () => {
                     )
                 })
             }
+            <Footer />
         </div>
      );
     }
 
-    return ( 
-        <div>
-            <ResponsiveAppBar />
-            <h1>Curiosities</h1>
-            {
-                curiosities.map((c) => {
-                    return(
-                        <div key={c._id} className='containerCurious'>
-                            <h2>{c.title}</h2>
-                            <p>{c.text}</p>
-                            <img src={c.image} alt="img not found" />
-                        </div>
-                    )
-                })
-            }
-        </div>
-     );
 }
  
 export default Curiosities;

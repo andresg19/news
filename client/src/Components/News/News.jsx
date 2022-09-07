@@ -5,6 +5,7 @@ import ResponsiveAppBar from "../NavBar/Nav";
 import swal from "sweetalert";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Footer from "../Footer/Footer"
 import "./News.modules.css";
 
 const News = () => {
@@ -73,6 +74,7 @@ const News = () => {
               </div>
             );
           })}
+          <Footer />
         </div>
       );
     } else {
@@ -91,6 +93,7 @@ const News = () => {
               </div>
             );
           })}
+          <Footer />
         </div>
       );
     }
