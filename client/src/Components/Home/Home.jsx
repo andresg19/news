@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NewsBox from "../News/NewsBox";
-import ResponsiveAppBar from "../NavBar/Nav";
+import Nav from "../NavBar/Nav";
 import "./Home.modules.css";
 import CuriositiesBox from "../Curiosities/CuriositiesBox";
 import { getUsers } from "../../Redux/actions";
@@ -27,7 +27,7 @@ console.log('SOY EL LOCAL', user)
 
   return (
     <div className="container">
-      <ResponsiveAppBar />
+      <Nav />
       <div className="banner">
         <img
           src="/banner.jpg"

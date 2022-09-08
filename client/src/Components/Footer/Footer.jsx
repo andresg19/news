@@ -5,7 +5,6 @@ import swal from "sweetalert"
 
 const handleOnClick = () => {
     swal({
-        title: 'Sing-up',
         text: 'Message sent succesfully',
         type: 'alert',
         buttons: {

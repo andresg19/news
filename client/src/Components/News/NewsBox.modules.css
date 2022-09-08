@@ -1,10 +1,10 @@
 
 .containerNewsRender {
     display: inline-block;
-    /* background-color: rgba(82, 82, 82, 0.315); */
-    border-right: 1px solid rgba(61, 61, 61, 0.041);
-    border-bottom: 1px solid rgba(61, 61, 61, 0.041);
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
+    background-color: rgba(245, 245, 245, 0.637);
+    border-right: 1px solid rgba(245, 245, 245, 0.247);;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.247);;
+    box-shadow: 3px 3px 3px 0px rgba(100, 100, 100, 0.315);;
     width: 35%;
     margin-left: 10%;
     margin-bottom: 2%;
@@ -16,7 +16,8 @@
 }
 
 .containerContentNews h3 {
-    color: rgba(15, 15, 15, 0.842);
+    color: rgb(15, 15, 15);
+    font-size: 18px;
     margin-left: 3%;
     font-family: 'Courier New';
 }

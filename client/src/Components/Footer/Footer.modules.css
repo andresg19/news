@@ -5,13 +5,15 @@
 }
 
 .footer-distributed{
-	background: #444;
+	margin-top: 1%;
+	background: transparent !important;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	width: 100%;
 	font: bold 16px sans-serif;
 	text-align: left;
 	padding: 50px 60px 40px;
 	overflow: hidden;
+	border-top: 1px solid rgba(0, 0, 0, 0.048);
 }
 
 
@@ -30,19 +32,19 @@
     font-size: 25px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: #b1a9a9;
+	color:  #afa9a967;
     font-weight: 700;
     font-variant: normal;
 }
 
 .footer-distributed h3 span{
-	color:  #000000;
+    color: #000000cc;
 }
 
 /* Footer links */
 
 .footer-distributed .footer-links{
-	color:  #ffffff;
+    color: #000000cc;
 	margin: 0 0 10px;
 	padding: 0;
 }
@@ -55,7 +57,7 @@
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+    color: #858383cc;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -94,7 +96,7 @@
 	display: inline-block;
 	vertical-align: top;
 	margin: 15px 42px 0 0;
-	color: #ffffff;
+    color: #696666cc;
 }
 
 /* The contact form */

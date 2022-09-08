@@ -97,10 +97,24 @@ const Register = () => {
                         value: 'confirm',
                       },
                     },
+                  }).then((value) => {
+                    if (value === 'confirm') {
+
+                      swal({
+                        text: 'Log in',
+                        type: 'succes',
+                        buttons: {
+                          confirm: {
+                            text: 'Confirmar',
+                            value: 'confirm',
+                          },
+                        },
+                      })
+                      navigate('/Login')
+                    }
                   })
-                  navigate('/Login')
-                }
-              })
+                    }
+                  })
               .catch((error) => {
                 console.log(error);
               });
