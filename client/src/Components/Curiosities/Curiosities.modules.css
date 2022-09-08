@@ -28,9 +28,10 @@
 .containerCurious {
 display: inline-block;
 /* background-color: rgba(82, 82, 82, 0.315); */
-border-right: 1px solid rgba(61, 61, 61, 0.041);
-border-bottom: 1px solid rgba(61, 61, 61, 0.041);
-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.171);
+background-color: rgba(245, 245, 245, 0.637);
+    border-right: 1px solid rgba(14, 13, 13, 0.897);;
+    border-bottom: 1px solid rgba(12, 12, 12, 0.692);;
+    box-shadow: 3px 3px 3px 0px rgba(24, 24, 24, 0.623);;
 width: 20%;
 margin-left: 10%;
 margin-bottom: 2%;
