@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-const DB_URI =  `mongodb://localhost:27017/appmusic`
+require('dotenv').config()
+const DB_URI =  process.env.MONGOURL
 
 module.exports = () => {
     const connect = () => {
