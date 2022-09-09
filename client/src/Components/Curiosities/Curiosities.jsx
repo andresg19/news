@@ -55,7 +55,6 @@ const Curiosities = () => {
                   });
             }
     }, [])
-
     if(user.length === 0) {
       return ( 
         <div className='bloqueado'>

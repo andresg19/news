@@ -8,13 +8,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(5px); */
-    background-color:rgba(68, 66, 66, 0.479);
+    background-color:rgba(0, 0, 0, 0.849);
+    
     
 }
 
 .containerFormRegister {
     display: block;
-    background-color: rgba(36, 33, 33, 0.082);
+    background-color: rgba(10, 10, 10, 0.589);
     width: 20%;
     height: auto;
     height: auto;
@@ -29,14 +30,15 @@
     border: 0;
     border-bottom: 1px solid cadetblue;
     outline: 0;
-    background-color: rgba(238, 238, 238, 0);
-    margin-left: 12%;
+    background-color: rgba(252, 248, 248, 0.185);
+    
+    margin-left: 21%;
     
     
 }
 
 .containerFormRegister p {
-    margin-left: 12%;
+    margin-left: 20%;
     color: red;
 }
 
@@ -47,3 +49,18 @@ border: none;
 cursor:pointer;
 font-family: 'Courier New';
 }
+
+@media (max-width: 470px) {
+    .containerFormRegister {
+        margin-top: 20%;
+        width: 60%;
+        margin-right: 18%;
+        
+    }
+    .containerFormRegister input {
+        margin-left: 15%;
+    }
+    .containerFormRegister button {
+        margin-left: 38%;
+    }
+ }

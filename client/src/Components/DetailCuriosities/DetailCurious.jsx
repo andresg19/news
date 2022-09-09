@@ -57,8 +57,13 @@ const DetailCuriosities = () => {
             dispatch(clearState()); 
           };
         }, [dispatch, id]);
-    
-        if(user.length === 0) {
+        
+        if (!actualCurious) {
+          <div>
+            <img src="https://c.tenor.com/hQz0Kl373E8AAAAj/loading-waiting.gif" alt="img not found" />
+        </div>
+        }
+        else if(user.length === 0) {
           return ( 
             <div className='bloqueado'>
               <ResponsiveAppBar />

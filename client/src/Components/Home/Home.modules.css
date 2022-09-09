@@ -45,6 +45,16 @@
      margin-right: auto;
      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.719);
     }
+    .sectionNews h2 {
+        width: auto;
+        font-size: 13px;
+        margin-right:10%;
+    }
+    .sectionCurious h2 {
+        width: auto;
+        font-size: 13px;
+        margin-right:10%;
+    }
    } 
 
 

@@ -62,3 +62,17 @@ border: none;
 cursor:pointer;
 font-family: 'Courier New';
 }
+
+@media (max-width: 470px) {
+    .containerNews {
+        display: block;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2%;
+        box-shadow: 3px 3px 3px 0px rgba(27, 26, 26, 0.623);;
+    }
+    .containerNews button {
+        margin-left: 25%;
+    }
+ }

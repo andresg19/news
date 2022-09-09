@@ -37,3 +37,20 @@ border: none;
 cursor:pointer;
 font-family: 'Courier New';
 }
+
+@media (max-width: 470px) {
+    .containerCuriousRender {
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+        box-shadow: 3px 3px 3px 0px rgba(27, 26, 26, 0.623);;
+    }
+    .containerCuriousContent button {
+        margin-left: 13%;
+        font-size: 14px;
+    }
+    .containerCuriousContent img {
+        margin-left: 39%;
+    }
+ }

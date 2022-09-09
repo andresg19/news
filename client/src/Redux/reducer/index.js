@@ -44,6 +44,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
       return {
         ...state,
         detail: [],
+        detailCurious: [],
       };
     case GET_CURIOUS:
       return {

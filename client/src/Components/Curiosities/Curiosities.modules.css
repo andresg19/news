@@ -58,9 +58,23 @@ transform: scale(1.1);
 }
 
 .containerCurious button{ 
-    margin-left: 20%;
+    margin-left: 15%;
 background-color: rgba(61, 61, 61, 0.171);
 border: none;
 cursor:pointer;
 font-family: 'Courier New';
 }
+
+@media (max-width: 470px) {
+    .containerCurious {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2%;
+        box-shadow: 3px 3px 3px 0px rgba(27, 26, 26, 0.623);;
+    }
+    .containerCurious button {
+        margin-left: 19%;
+    }
+ }

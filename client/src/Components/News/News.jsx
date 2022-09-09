@@ -58,9 +58,10 @@ const News = () => {
     }
   }, [dispatch]);
   {
-    if (user.length === 0) {
-      return (
-        <div className="bloqueado">
+    
+      if(user.length === 0) {
+        return (
+          <div className="bloqueado">
           <ResponsiveAppBar />
           {myNewsReverse.map((n) => {
             return (
@@ -76,28 +77,30 @@ const News = () => {
           })}
           <Footer />
         </div>
-      );
-    } else {
-      return (
-        <div className="container">
-          <ResponsiveAppBar />
-          {myNewsReverse.map((n) => {
-            return (
-              <div key={n._id} className="containerNews">
-                <p>{n.titleNew}</p>
-                <img src={n.imageNew} alt="img not found" width="25%" />
-                <p>{n.dateNew}</p>
-                <Link to={"/DetailNews/" + n._id}>  
-                <button>complete news</button>
-               </Link>
-              </div>
-            );
-          })}
-          <Footer />
-        </div>
-      );
+        )
+      } else {
+
+        return (
+          <div className="container">
+            <ResponsiveAppBar />
+            {myNewsReverse.map((n) => {
+              return (
+                <div key={n._id} className="containerNews">
+                  <p>{n.titleNew}</p>
+                  <img src={n.imageNew} alt="img not found" width="25%" />
+                  <p>{n.dateNew}</p>
+                  <Link to={"/DetailNews/" + n._id}>  
+                  <button>complete news</button>
+                 </Link>
+                </div>
+              );
+            })}
+            <Footer />
+          </div>
+        );
+      }
     }
-  }
+  
 };
 
 export default News;
